@@ -1,0 +1,911 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none !important;
+    border: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ======= ESTILOS DEL HEADER Y MENÚ ======= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    min-height: 94px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.center-section,
+.centro {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+.menu-text {
+    font-size: 1.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Inter', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.header-logo,
+.logo-institucion,
+.logo-ludik {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: contain;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+    background: none !important;
+    padding: 0 !important;
+    cursor: default;
+    outline: none !important;
+    border: none !important;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.2));
+}
+
+.titulo-ludik {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-ludik-header {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Burger menu styles */
+.burger {
+    position: relative;
+    width: 60px;
+    height: 50px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none !important;
+    border: none !important;
+    flex-shrink: 0;
+}
+
+.burger:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.05);
+}
+
+.burger input {
+    display: none;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+    opacity: 1;
+    left: 50%;
+    transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+    width: 50px;
+    top: 12px;
+    transform: translateX(-50%);
+    transform-origin: center;
+}
+
+.burger span:nth-of-type(2) {
+    width: 50px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.burger span:nth-of-type(3) {
+    width: 50px;
+    top: 33px;
+    transform: translateX(-50%);
+    transform-origin: center;
+}
+
+.burger input:checked~span:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+    top: 50%;
+    width: 38px;
+}
+
+.burger input:checked~span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.burger input:checked~span:nth-of-type(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+    width: 48px;
+}
+
+/* MENÚ LATERAL */
+.side-menu {
+    position: fixed;
+    top: 94px;
+    left: -380px;
+    width: 380px;
+    height: calc(100vh - 94px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.menu-header {
+    flex-shrink: 0;
+    padding: 35px 40px;
+    border-bottom: none !important;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+}
+
+.menu-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin: 25px 0 0 0;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.menu-buttons {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+}
+
+.menu-buttons::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.menu-buttons::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+}
+
+.menu-buttons::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+}
+
+.menu-button {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 30px;
+    background: transparent !important;
+    color: #667eea;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Inter', Arial, sans-serif;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    margin: 2px 0;
+}
+
+.menu-button:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+    color: #667eea;
+    transform: translateX(8px);
+}
+
+.menu-button:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0 4px 4px 0;
+}
+
+.menu-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.menu-button.close-session {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.menu-button.close-session:hover {
+    background: rgba(211, 47, 47, 0.1) !important;
+    color: #b71c1c;
+}
+
+.menu-button.close-session:hover::before {
+    background: #d32f2f;
+}
+
+.overlay {
+    position: fixed;
+    top: 94px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 94px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* ======= ESTILOS DEL PERFIL ======= */
+.perfil-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.perfil-main-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: fit-content;
+    position: sticky;
+    top: 110px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-main-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.perfil-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.perfil-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.05);
+}
+
+.perfil-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.rol-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: rgba(249, 250, 251, 0.8);
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.info-item:hover {
+    background: rgba(249, 250, 251, 1);
+}
+
+.info-item i {
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+}
+
+.info-item span {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.perfil-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    align-content: start;
+}
+
+.data-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.data-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.data-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-header i {
+    font-size: 1.2rem;
+    color: #667eea;
+    padding: 8px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(249, 250, 251, 0.6);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.stat-item:hover {
+    background: rgba(249, 250, 251, 1);
+}
+
+.stat-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #2d3748;
+    padding: 4px 8px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.list-item {
+    padding: 10px 15px;
+    background: rgba(249, 250, 251, 0.6);
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.list-item:nth-child(even) {
+    border-left-color: #764ba2;
+}
+
+/* COLORES POR ROL */
+.rol-admin .perfil-main-card::before {
+    background: linear-gradient(90deg, #e53e3e, #c53030);
+}
+
+.rol-admin .rol-badge {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+}
+
+.rol-admin .card-header i {
+    color: #e53e3e;
+    background: rgba(229, 62, 62, 0.1);
+}
+
+.rol-docente .perfil-main-card::before {
+    background: linear-gradient(90deg, #3182ce, #2c5282);
+}
+
+.rol-docente .rol-badge {
+    background: linear-gradient(135deg, #3182ce, #2c5282);
+}
+
+.rol-docente .card-header i {
+    color: #3182ce;
+    background: rgba(49, 130, 206, 0.1);
+}
+
+.rol-docente_apoyo .perfil-main-card::before {
+    background: linear-gradient(90deg, #805ad5, #553c9a);
+}
+
+.rol-docente_apoyo .rol-badge {
+    background: linear-gradient(135deg, #805ad5, #553c9a);
+}
+
+.rol-docente_apoyo .card-header i {
+    color: #805ad5;
+    background: rgba(128, 90, 213, 0.1);
+}
+
+.rol-directivo .perfil-main-card::before {
+    background: linear-gradient(90deg, #d69e2e, #b7791f);
+}
+
+.rol-directivo .rol-badge {
+    background: linear-gradient(135deg, #d69e2e, #b7791f);
+}
+
+.rol-directivo .card-header i {
+    color: #d69e2e;
+    background: rgba(214, 158, 46, 0.1);
+}
+
+.rol-acudiente .perfil-main-card::before {
+    background: linear-gradient(90deg, #319795, #2c7a7b);
+}
+
+.rol-acudiente .rol-badge {
+    background: linear-gradient(135deg, #319795, #2c7a7b);
+}
+
+.rol-acudiente .card-header i {
+    color: #319795;
+    background: rgba(49, 151, 149, 0.1);
+}
+
+.rol-madre .perfil-main-card::before {
+    background: linear-gradient(90deg, #d53f8c, #b83280);
+}
+
+.rol-madre .rol-badge {
+    background: linear-gradient(135deg, #d53f8c, #b83280);
+}
+
+.rol-madre .card-header i {
+    color: #d53f8c;
+    background: rgba(213, 63, 140, 0.1);
+}
+
+.rol-padre .perfil-main-card::before {
+    background: linear-gradient(90deg, #38a169, #2f855a);
+}
+
+.rol-padre .rol-badge {
+    background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+.rol-padre .card-header i {
+    color: #38a169;
+    background: rgba(56, 161, 105, 0.1);
+}
+
+.rol-estudiante .perfil-main-card::before {
+    background: linear-gradient(90deg, #ed8936, #dd6b20);
+}
+
+.rol-estudiante .rol-badge {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+}
+
+.rol-estudiante .card-header i {
+    color: #ed8936;
+    background: rgba(237, 137, 54, 0.1);
+}
+
+/* ======= RESPONSIVE DESIGN ======= */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .header {
+        padding: 10px 30px;
+        min-height: 80px;
+    }
+
+    .imagen-ludik-header {
+        height: 65px;
+    }
+
+    .header-logo,
+    .logo-institucion,
+    .logo-ludik {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .menu-text {
+        font-size: 1.5rem;
+    }
+
+    .right-section {
+        gap: 18px;
+    }
+
+    .side-menu {
+        top: 80px;
+        height: calc(100vh - 80px);
+    }
+
+    .overlay {
+        top: 80px;
+        height: calc(100vh - 80px);
+    }
+
+    .perfil-container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+    .header {
+        padding: 8px 20px;
+        min-height: 70px;
+    }
+
+    .menu-text {
+        font-size: 1.2rem;
+    }
+
+    .imagen-ludik-header {
+        height: 55px;
+    }
+
+    .header-logo,
+    .logo-institucion,
+    .logo-ludik {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .right-section {
+        gap: 12px;
+    }
+
+    .side-menu {
+        width: 300px;
+        left: -300px;
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .overlay {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .burger {
+        width: 50px;
+        height: 45px;
+    }
+
+    .perfil-container {
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    .header {
+        padding: 6px 12px;
+        min-height: 60px;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .left-section {
+        gap: 0;
+        min-width: 50px;
+    }
+
+    .imagen-ludik-header {
+        height: 45px;
+    }
+
+    .header-logo,
+    .logo-institucion,
+    .logo-ludik {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .right-section {
+        gap: 8px;
+    }
+
+    .burger {
+        width: 45px;
+        height: 40px;
+        padding: 3px;
+    }
+
+    .burger span {
+        height: 3px;
+    }
+
+    .burger span:nth-of-type(1) {
+        width: 40px;
+        top: 10px;
+    }
+
+    .burger span:nth-of-type(2) {
+        width: 40px;
+    }
+
+    .burger span:nth-of-type(3) {
+        width: 40px;
+        top: 28px;
+    }
+
+    .side-menu {
+        width: 280px;
+        left: -280px;
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .overlay {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .menu-button {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+        min-height: 55px;
+    }
+
+    .imagen-ludik-header {
+        height: 38px;
+    }
+
+    .header-logo,
+    .logo-institucion,
+    .logo-ludik {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .right-section {
+        gap: 6px;
+    }
+
+    .burger {
+        width: 40px;
+        height: 38px;
+    }
+
+    .burger span:nth-of-type(1) {
+        width: 35px;
+        top: 9px;
+    }
+
+    .burger span:nth-of-type(2) {
+        width: 35px;
+    }
+
+    .burger span:nth-of-type(3) {
+        width: 35px;
+        top: 26px;
+    }
+
+    .side-menu {
+        width: 260px;
+        left: -260px;
+        top: 55px;
+        height: calc(100vh - 55px);
+    }
+
+    .overlay {
+        top: 55px;
+        height: calc(100vh - 55px);
+    }
+}
+
+/* Móviles extra pequeños */
+@media (max-width: 360px) {
+    .header {
+        padding: 4px 8px;
+        min-height: 50px;
+    }
+
+    .imagen-ludik-header {
+        height: 32px;
+    }
+
+    .header-logo,
+    .logo-institucion,
+    .logo-ludik {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .right-section {
+        gap: 5px;
+    }
+
+    .burger {
+        width: 38px;
+        height: 35px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

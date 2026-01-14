@@ -1,0 +1,604 @@
+/* CSS para Inicio_sesion.html - Página de login con estética moderna */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenido principal */
+.main-content {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    flex: 1;
+}
+
+
+/* Ocultar formularios inicialmente */
+#form_admin,
+#form_docente,
+#form_acudiente {
+    display: none;
+}
+
+.Inicio_sesion {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Título mejorado */
+.Sesion_titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* Logo mejorado */
+.Cont_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.Cont_logo img {
+    border-radius: 16px;
+    transition: opacity 0.3s;
+}
+
+/* Botones de selección - REDISEÑO COMPLETO */
+.Botones_usuarios {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* 🔥 evita que bajen */
+    gap: 25px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+
+
+.Botones_usuarios button {
+    width: 150px;
+    height: 85px;
+    font-size: 0.9rem;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Botones_usuarios button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Botones_usuarios button.active {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon {
+    font-size: 1.6rem;
+}
+
+/* Estilos específicos por botón */
+.btn_adm {
+    background: rgba(165, 180, 252, 0.4);
+    border: 3px solid rgba(165, 180, 252, 0.8);
+    color: #1e293b;
+}
+
+.btn_prof {
+    background: rgba(187, 247, 208, 0.4);
+    border: 3px solid rgba(187, 247, 208, 0.8);
+    color: #1e293b;
+}
+
+.btn_padr {
+    background: rgba(254, 215, 170, 0.4);
+    border: 3px solid rgba(254, 215, 170, 0.8);
+    color: #1e293b;
+}
+
+.btn_dir {
+    background: rgba(252, 165, 243, 0.4);
+    border: 3px solid rgba(252, 165, 243, 0.8);
+    color: #1e293b;
+}
+
+.form_directivo {
+    background: rgba(252, 165, 243, 0.25);
+    border-color: rgba(252, 165, 243, 0.8);
+}
+
+.form_directivo .input-group input {
+    background: rgba(252, 165, 243, 0.15);
+    border-color: rgba(244, 114, 182, 0.3);
+}
+
+.form_directivo .input-group input:focus {
+    border-color: #f472b6;
+    background: rgba(252, 165, 243, 0.25);
+    box-shadow: 0 4px 15px rgba(244, 114, 182, 0.2);
+}
+
+#form_directivo {
+    background: rgba(252, 165, 243, 0.25);
+    border-color: rgba(252, 165, 243, 0.8);
+}
+
+#form_directivo .input-group input {
+    background: rgba(252, 165, 243, 0.15);
+    border-color: rgba(244, 114, 182, 0.3);
+}
+
+#form_directivo .input-group input:focus {
+    border-color: #f472b6;
+    background: rgba(252, 165, 243, 0.25);
+    box-shadow: 0 4px 15px rgba(244, 114, 182, 0.2);
+}
+
+/* Mensaje inicial mejorado */
+.mensaje-inicial p {
+    font-size: 1.1rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor general de formularios mejorado */
+.Formularios_sesion>div[id^="form_"] {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid;
+    position: relative;
+}
+
+/* Colores de fondo según rol */
+#form_admin {
+    background: rgba(165, 180, 252, 0.25);
+    border-color: rgba(165, 180, 252, 0.8);
+}
+
+#form_docente {
+    background: rgba(187, 247, 208, 0.25);
+    border-color: rgba(187, 247, 208, 0.8);
+}
+
+#form_acudiente {
+    background: rgba(254, 215, 170, 0.25);
+    border-color: rgba(254, 215, 170, 0.8);
+}
+
+/* Grupos de input mejorados - ÚNICA DEFINICIÓN */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
+    color: #1e293b;
+    backdrop-filter: blur(10px);
+}
+
+#form_admin .input-group input {
+    background: rgba(165, 180, 252, 0.15);
+    border-color: rgba(129, 140, 248, 0.3);
+}
+
+#form_admin .input-group input:focus {
+    border-color: #818cf8;
+    background: rgba(165, 180, 252, 0.25);
+    box-shadow: 0 4px 15px rgba(129, 140, 248, 0.2);
+}
+
+#form_docente .input-group input {
+    background: rgba(187, 247, 208, 0.15);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+#form_docente .input-group input:focus {
+    border-color: #4ade80;
+    background: rgba(187, 247, 208, 0.25);
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.2);
+}
+
+#form_acudiente .input-group input {
+    background: rgba(254, 215, 170, 0.15);
+    border-color: rgba(253, 186, 116, 0.3);
+}
+
+#form_acudiente .input-group input:focus {
+    border-color: #fdba74;
+    background: rgba(254, 215, 170, 0.25);
+    box-shadow: 0 4px 15px rgba(253, 186, 116, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #64748b;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Título de login mejorado */
+.Formularios_sesion h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor de icono mejorado */
+.form-icon-container {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-icon-container img {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.form-icon-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Grupos de input mejorados - ELIMINANDO DUPLICADO */
+
+/* Botón de login mejorado */
+.login-btn {
+    width: 100%;
+    padding: 15px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Inter', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.login-btn:hover::before {
+    left: 100%;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.login-btn:active {
+    transform: translateY(-1px);
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer */
+.pie-pagina {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Animaciones */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Inicio_sesion {
+    animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.Formularios_sesion>div[id^="form_"] {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        margin: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .Inicio_sesion {
+        padding: 40px 25px;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .Botones_usuarios {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .Botones_usuarios button {
+        width: 200px;
+        height: 70px;
+    }
+
+    .Cont_logo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .form-icon-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .Formularios_sesion>div[id^="form_"] {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.8rem;
+    }
+
+    .Botones_usuarios button {
+        width: 180px;
+        height: 65px;
+        font-size: 0.85rem;
+    }
+
+    .btn-icon {
+        font-size: 1.3rem;
+    }
+
+    .input-group input {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .login-btn {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+}
+
+.back-btn {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: 3px solid rgba(44, 62, 80, 0.8);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', Arial, sans-serif;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.3px;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #818cf8 0%, #9333ea 100%);
+    border-color: rgba(44, 62, 80, 1);
+}
+
+.back-btn:active {
+    transform: translateY(-1px);
+    transition: all 0.1s ease;
+}
+
+@media (max-width: 768px) {
+    .back-btn {
+        left: 18px;
+        bottom: 18px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-btn {
+        left: 15px;
+        bottom: 15px;
+        padding: 10px 16px;
+        font-size: 13px;
+        border-radius: 12px;
+    }
+}
+
+/* Ajuste input con ojito */
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 45px 15px 15px;
+    /* espacio a la derecha para el ojito */
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
+}
+
+/* Estilo del ojito */
+.toggle-pass {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #64748b;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.toggle-pass:hover {
+    color: #4f46e5;
+}
+
+@media (max-width: 900px) {
+    .Botones_usuarios {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .Botones_usuarios button {
+        width: 45%;
+    }
+}

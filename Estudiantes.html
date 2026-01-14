@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes - LUDIK</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/Estudiantes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Agregar jsPDF y html2canvas para generar PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Header con Menú Extraíble -->
+    <div class="header">
+        <div class="left-section">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <span class="menu-text">MENÚ</span>
+        </div>
+
+        <div class="centro">
+            <h1 class="titulo-ludik">
+                <img src="img\LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
+            </h1>
+        </div>
+
+        <div class="right-section">
+            <img src="img/Ludik2.png" alt="Logo Ludik" class="header-logo">
+            <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
+            <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
+        </div>
+    </div>
+
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Menú lateral -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="menu-title">Panel De Control</div>
+        </div>
+        <div class="menu-buttons">
+            <button class="menu-button">
+                <span class="menu-icon">🏠</span>
+                Volver a Interfaz
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">👤</span>
+                Perfil
+            </button>
+            <button class="menu-button" id="btnCrearCuentas">
+                <span class="menu-icon">➕</span>
+                Crear Cuentas
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📚</span>
+                Actividades
+            </button>
+            <button class="menu-button" id="btnIA">
+                <span class="menu-icon">🤖</span>
+                Asistente IA
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📝</span>
+                Registrar un nuevo estudiante
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📋</span>
+                Registrar un PIAR y diagnóstico médico
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📊</span>
+                Valoraciones Pedagógicas
+            </button>
+            <button class="menu-button" id="btnDocumentos">
+                <span class="menu-icon">📁</span>
+                Documentos
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">💬</span>
+                Comunicate
+            </button>
+            <a href="manual.pdf" download class="menu-button">
+                <span class="menu-icon">📘</span>
+                Manual de Usuario
+            </a>
+            <button class="menu-button">
+                <span class="menu-icon">❓</span>
+                Ayuda
+            </button>
+            <button class="menu-button close-session">
+                <span class="menu-icon">🚪</span>
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Navegación interna -->
+        <div class="nav-interno">
+            <button class="nav-btn active" data-section="buscar">Buscar Estudiantes</button>
+            <button class="nav-btn" data-section="lista">Lista Completa</button>
+        </div>
+
+        <!-- Sección de Búsqueda -->
+        <section id="buscar" class="section active">
+            <h1>Buscar Estudiantes</h1>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre, apellidos o documento...">
+                    <button id="searchBtn" class="btn-search">Buscar</button>
+                </div>
+
+                <div class="filters">
+                    <select id="gradoFilter">
+                        <option value="">Todos los grados</option>
+                    </select>
+                    <select id="grupoFilter">
+                        <option value="">Todos los grupos</option>
+                    </select>
+                </div>
+
+                <!-- Botones de descarga para búsqueda -->
+                <div class="download-controls" id="searchDownloadControls" style="display: none;">
+                    <button id="downloadSearchPDF" class="btn-download">
+                        📄 Descargar Resultados PDF
+                    </button>
+                    <button id="downloadSearchExcel" class="btn-download btn-excel">
+                        📊 Descargar Resultados Excel
+                    </button>
+                </div>
+            </div>
+
+            <div class="search-results" id="searchResults">
+                <!-- Aquí se mostrarán los resultados de búsqueda -->
+            </div>
+        </section>
+
+        <!-- Sección de Lista Completa -->
+        <section id="lista" class="section">
+            <h1>Lista de Estudiantes</h1>
+
+            <div class="list-controls">
+                <div class="pagination-controls">
+                    <button id="prevPage" class="btn-pagination">Anterior</button>
+                    <span id="pageInfo">Página 1 de 1</span>
+                    <button id="nextPage" class="btn-pagination">Siguiente</button>
+                </div>
+
+                <!-- Botones de descarga para lista completa -->
+                <div class="download-controls">
+                    <button id="downloadAllPDF" class="btn-download">
+                        📄 Descargar Todo PDF
+                    </button>
+                    <button id="downloadAllExcel" class="btn-download btn-excel">
+                        📊 Descargar Todo Excel
+                    </button>
+                </div>
+            </div>
+
+            <div class="students-grid" id="studentsGrid">
+                <!-- Aquí se mostrará la lista de estudiantes -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para mostrar información detallada del estudiante -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <!-- La foto del estudiante se agregará dinámicamente aquí -->
+                <h2 id="modalTitle">Información del Estudiante</h2>
+                <!-- Botones de descarga en el modal -->
+                <div class="modal-download-buttons">
+                    <button id="downloadStudentPDF" class="btn-download-modal">
+                        📄 Descargar PIAR
+                    </button>
+                    <button id="downloadActaAcuerdo" class="btn-download-modal btn-acta">
+                        📋 Descargar Acta de Acuerdo
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- Pestañas del modal -->
+                <div class="modal-tabs">
+                    <button class="modal-tab active" data-tab="personal">Datos Personales</button>
+                    <button class="modal-tab" data-tab="academico">Información Académica</button>
+                    <button class="modal-tab" data-tab="familia">Información Familiar</button>
+                    <button class="modal-tab" data-tab="medico">Información Médica</button>
+                    <button class="modal-tab" data-tab="piar">PIAR</button>
+                </div>
+
+                <!-- Contenido de las pestañas -->
+                <div id="personalTab" class="tab-content active">
+                    <div class="info-section">
+                        <h3>Datos Básicos</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label">Nombre Completo:</span>
+                                <span class="value" id="nombreCompleto"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Documento:</span>
+                                <span class="value" id="documento"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Fecha de Nacimiento:</span>
+                                <span class="value" id="fechaNacimiento"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Lugar de Nacimiento:</span>
+                                <span class="value" id="lugarNacimiento"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Sector:</span>
+                                <span class="value" id="sector"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Dirección:</span>
+                                <span class="value" id="direccion"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Teléfono:</span>
+                                <span class="value" id="telefono"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Correo:</span>
+                                <span class="value" id="correo"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Información Social</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label">Víctima de Conflicto:</span>
+                                <span class="value" id="victimaConflicto"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Grupo Étnico:</span>
+                                <span class="value" id="grupoEtnico"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Con quien Vive:</span>
+                                <span class="value" id="conQuienVive"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Afiliación de Salud:</span>
+                                <span class="value" id="afiliacionSalud"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Régimen de afiliación:</span>
+                                <span class="value" id="regimenAfiliacion"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="academicoTab" class="tab-content">
+                    <div class="info-section">
+                        <h3>Información Académica</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label">Grado Actual:</span>
+                                <span class="value" id="gradoActual"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Grupo:</span>
+                                <span class="value" id="grupoActual"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Entorno Educativo</h3>
+                        <div class="info-grid" id="entornoEducativo">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="familiaTab" class="tab-content">
+                    <div class="info-section">
+                        <h3>Información de la Madre</h3>
+                        <div class="info-grid" id="infoMadre">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Información del Padre</h3>
+                        <div class="info-grid" id="infoPadre">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Información del Acudiente</h3>
+                        <div class="info-grid" id="infoAcudiente">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="medicoTab" class="tab-content">
+                    <div class="info-section">
+                        <h3>Información Médica</h3>
+                        <div class="medical-info" id="infoMedica">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="piarTab" class="tab-content">
+                    <div class="info-section">
+                        <h3>Plan Individual de Ajustes Razonables (PIAR)</h3>
+                        <div class="piar-info" id="infoPiar">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Valoraciones Pedagógicas</h3>
+                        <div class="valoraciones-list" id="valoracionesList">
+                            <!-- Se llenará dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <!-- PDF Loading spinner -->
+    <div id="pdfLoadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Generando PDF...</p>
+    </div>
+
+    <script src="Js/Estudiantes.js"></script>
+    <script src="Js/Roles_menu.js"></script>    
+</body>
+
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDIK - Información</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/Index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <div class="encabezado-ludik">
+            <div class="lado-izq">
+                <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
+                <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
+                <span class="especialidad">Colegio San José de Guanentá</span>
+            </div>
+
+            <div class="centro">
+                <h1 class="titulo-ludik">
+                    <img src="img\LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
+                </h1>
+            </div>
+
+
+            <div class="lado-der">
+                <img src="img/Ludik2.png" alt="Logo Ludik" class="logo-ludik no-hover">
+                <a href="Inicio_sesion.html" class="btn-login">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Navegación interna -->
+        <div class="nav-interno">
+            <button class="nav-btn active" data-section="colegio">Colegio</button>
+            <button class="nav-btn" data-section="inclusion">Inclusión en Colombia</button>
+            <button class="nav-btn" data-section="ludik">Proyecto LUDIK</button>
+            <button class="nav-btn" data-section="desarrolladores">Desarrolladores y Equipo</button>
+        </div>
+
+        <!-- Sección Colegio -->
+        <section id="colegio" class="section active">
+
+            <!-- Collage de los estudiantes -->
+            <div class="collage-space">
+                <img src="img/Collage.jpg" alt="Collage de estudiantes" class="collage-img">
+                <p class="pie-imagen">Collage de nuestros estudiantes en proceso de inclusión</p>
+            </div>
+
+            <h1>Colegio San José de Guanentá</h1>
+            <p class="parrafo-principal">
+                El <span class="highlight">Colegio San José de Guanentá</span> es una institución educativa con más de
+                <span class="highlight">200 años de historia</span>, ubicada en el municipio de San Gil, departamento de
+                Santander.
+            </p>
+            <p class="parrafo-principal">
+                Hace parte de la zona urbana y es dirigida por la Secretaría de Educación de Santander.
+                Cuenta con jornadas de mañana y tarde, así como especialidades técnicas para los grados 10 y 11.
+                Nuestra institución se ha consolidado como un referente educativo en la región guanentina.
+            </p>
+            <p class="parrafo-principal">
+                Actualmente, el colegio atiende a una población estudiantil diversa de aproximadamente
+                <span class="highlight">1800 estudiantes</span>, donde cerca del
+                <span class="highlight">36% requieren atención educativa especial</span>, lo cual convierte
+                a la institución en un referente regional en procesos de inclusión educativa.
+            </p>
+
+            <div class="inclusion-stats">
+                <h3 class="subtitulo">Realidad de la Inclusión en Nuestro Colegio</h3>
+                <p class="parrafo-principal">
+                    Los niños, niñas y adolescentes que conviven con alumnos regulares en la escuela nos permiten creer
+                    que las brechas para recibir educación con una verdadera equidad, se han ido reduciendo
+                    considerablemente. Sin embargo, vemos con preocupación que, en este panorama de buenas intenciones,
+                    emergen barreras que todavía impiden el acceso o la permanencia escolar a quienes presentan alguna
+                    condición de discapacidad intelectual, mental o física.
+                </p>
+                <div class="stat-highlight">
+                    En nuestro colegio San José de Guanentá tenemos en la actualidad <span class="numero-destacado">158
+                        estudiantes</span>
+                    con discapacidades, trastornos de aprendizaje y trastornos de conducta, distribuidos en ambas
+                    jornadas.
+                </div>
+            </div>
+
+            <div class="image-space">
+                <img src="img/colegio.jpg" alt="Colegio San José de Guanentá" class="imagen-colegio">
+                <p class="pie-imagen">Instalaciones del Colegio San José de Guanentá - San Gil, Santander</p>
+            </div>
+
+
+
+            <!-- Sección Estudiantes -->
+            <div class="students-section">
+                <h2 class="titulo-seccion">Nuestros Estudiantes</h2>
+
+                <div class="students-container">
+                    <!-- Ejemplo estudiante -->
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Me llamo Adrián Gómez del grado 6.1, Tengo autismo
+                                Me encanta la tecnología y disfruto ir a mi colegio junto a mi tutora sombra.
+                            </blockquote>
+                            <cite class="autor-cita">Adrian Gomez</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Adrian_Gomez.jpg" alt="Adrian Gomez" class="student-photo">
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Soy Carlos Mauricio Tengo síndrome de down curso segundo grado. Mi mamita me acompaña al
+                                colegio y mis compañeritos comparten su tiempo conmigo en todas las actividades.
+                            </blockquote>
+                            <cite class="autor-cita">Carlos Mauricio</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Carlos_Mauricio.jpg" alt="Carlos Mauricio" class="student-photo">
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Soy Génesis TDAH, me encanta que mi mamita me haga peinados, disfruto bailar y compartir
+                                con mis
+                                amigos en el colegio.
+                            </blockquote>
+                            <cite class="autor-cita">Génesis</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Genesis.jpg" alt="Genesis" class="student-photo">
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Somos Leonel y Adrián, somos gemelos, tenemos trastornos de aprendizaje. Yo, Leonel,
+                                ayudo a
+                                mi hermanito Adrián. Nos gusta trabajar juntos y hacer todo juntos en mi colegio.
+                            </blockquote>
+                            <cite class="autor-cita">Leonel y Adrián</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Leonel_y_Adrian.jpg" alt="Leonel y Adrian" class="student-photo">
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Me llamo Mariana, curso transición, tengo baja visión. Mi profe me sienta cerca de ella
+                                y
+                                mis amiguitos trabajan conmigo en ocasiones, ya que soy una niña muy independiente. Mi
+                                colegio es lindo y me encanta estar allí.
+                            </blockquote>
+                            <cite class="autor-cita">Mariana</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Mariana.jpg" alt="Mariana" class="student-photo">
+                        </div>
+                    </div>
+
+                    <div class="student-card">
+                        <div class="student-text">
+                            <blockquote class="cita">
+                                Me llamo Sarita, estoy en el grado primero. Tengo Perturbación de la actividad y de la
+                                atención, trabajo en equipo con mis compañeros y disfruto mucho en mi colegio.
+                            </blockquote>
+                            <cite class="autor-cita">Sarita</cite>
+                        </div>
+                        <div class="student-image">
+                            <img src="img/Sarita.jpg" alt="Sarita" class="student-photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección Inclusión -->
+        <section id="inclusion" class="section">
+            <h1>Inclusión Educativa en Colombia</h1>
+
+            <!-- Cita inspiradora con imagen -->
+            <div class="quote-section">
+                <div class="quote-content">
+                    <div class="quote-text">
+                        <blockquote class="cita">
+                            "Mi madre nos decía Carl, ponte tus zapatos, Oscar ponte tus prótesis. Entonces crecí
+                            pensando no que tenía una discapacidad, sino que tenía un par de zapatos diferentes"
+                        </blockquote>
+                        <cite class="autor-cita">- Oscar Pistorius (Atleta paralímpico sudafricano)</cite>
+                    </div>
+                    <div class="quote-image">
+                        <img src="img/oscarpistorius.jpg" alt="Oscar Pistorius corriendo" class="athlete-image">
+                    </div>
+                </div>
+            </div>
+
+            <p class="parrafo-principal">
+                La inclusión educativa en Colombia se encuentra respaldada por un marco normativo robusto que busca
+                garantizar
+                el derecho fundamental a la educación para todos los niños, niñas y jóvenes del país, sin importar sus
+                condiciones físicas, cognitivas, sociales o culturales. Este enfoque representa un cambio paradigmático
+                en la forma de entender y abordar la diversidad en el ámbito educativo.
+            </p>
+
+            <div class="inclusion-definition">
+                <h3 class="subtitulo">Definición Oficial de Educación Inclusiva</h3>
+                <p class="parrafo-principal">
+                    Según el <span class="highlight">Departamento Nacional de Planeación (DNP)</span>, "La educación
+                    inclusiva
+                    presupone un marco amplio, que elimina las barreras para el aprendizaje y promueve la participación
+                    en la
+                    escuela, de tal manera que se asegure una educación equitativa que reconoce y aborda los diferentes
+                    ritmos de
+                    desarrollo y estilos de aprendizaje, así como las características contextuales de todos y cada uno
+                    de los niños, niñas, adolescentes y jóvenes. En este sentido, se apunta hacia una educación
+                    inclusiva
+                    soportada en los derechos humanos". (DNP 2019)
+                </p>
+
+                <p class="parrafo-principal">
+                    De acuerdo con el Ministerio de Educación Nacional, más de <span class="numero-destacado">500.000
+                        estudiantes</span>
+                    en Colombia presentan algún tipo de discapacidad o necesidad educativa especial.
+                    El DANE (2022) reporta que cerca del <span class="highlight">7%</span> de la población en edad
+                    escolar
+                    presenta condiciones que requieren apoyos pedagógicos adicionales, lo cual demuestra la urgencia de
+                    fortalecer
+                    las estrategias de inclusión educativa en todo el país.
+                </p>
+
+            </div>
+
+            <div class="reality-check">
+                <h3 class="subtitulo">Desafíos de la Realidad Educativa</h3>
+                <p class="parrafo-principal">
+                    Si bien la política de integración educativa está inspirada en propósitos nobles y necesarios, la
+                    realidad en las aulas colombianas presenta desafíos complejos que la reglamentación inicial no
+                    contempló
+                    completamente. Durante los últimos años hemos evidenciado un incremento significativo de estudiantes
+                    con diferentes tipos de discapacidad en las aulas regulares, lo que demanda estrategias pedagógicas
+                    innovadoras y recursos especializados.
+                </p>
+            </div>
+
+            <h2 class="titulo-seccion">Marco Legal y Normativo</h2>
+            <p class="parrafo-principal">
+                Colombia cuenta con un conjunto de leyes y decretos que establecen las bases legales para la educación
+                inclusiva:
+            </p>
+
+            <div class="laws-container">
+                <div class="law-item">
+                    <button class="law-btn" data-law="constitucion">
+                        <div class="law-title">
+                            <h4>Constitución Política de Colombia (1991)</h4>
+                            <p>Fundamento constitucional del derecho a la educación</p>
+                        </div>
+                        <span class="law-icon">+</span>
+                    </button>
+                    <div class="law-content" id="constitucion">
+                        <div class="law-body">
+                            <h5>Artículo 67 - Derecho a la Educación</h5>
+                            <p class="parrafo-principal">La educación es un derecho de la persona y un servicio público
+                                que
+                                tiene una función social; con ella se busca el acceso al conocimiento, a la ciencia, a
+                                la
+                                técnica, y a los demás bienes y valores de la cultura. La educación formará al
+                                colombiano en el
+                                respeto a los derechos humanos, a la paz y a la democracia; y en la práctica del trabajo
+                                y la
+                                recreación, para el mejoramiento cultural, científico, tecnológico y para la protección
+                                del
+                                ambiente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="law-item">
+                    <button class="law-btn" data-law="ley115">
+                        <div class="law-title">
+                            <h4>Ley 115 de 1994</h4>
+                            <p>Ley General de Educación - Atención a la diversidad</p>
+                        </div>
+                        <span class="law-icon">+</span>
+                    </button>
+                    <div class="law-content" id="ley115">
+                        <div class="law-body">
+                            <h5>Artículo 46 - Integración con el Servicio Educativo</h5>
+                            <p class="parrafo-principal">La educación para personas con limitaciones físicas,
+                                sensoriales,
+                                psíquicas, cognoscitivas, emocionales o con capacidades intelectuales excepcionales, es
+                                parte
+                                integrante del servicio público educativo. Los establecimientos educativos organizarán
+                                directamente o mediante convenio, acciones pedagógicas y terapéuticas que permitan el
+                                proceso de
+                                integración académica y social de dichos educandos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="law-item">
+                    <button class="law-btn" data-law="decreto366">
+                        <div class="law-title">
+                            <h4>Decreto 366 de 2009</h4>
+                            <p>Organización del servicio de apoyo pedagógico</p>
+                        </div>
+                        <span class="law-icon">+</span>
+                    </button>
+                    <div class="law-content" id="decreto366">
+                        <div class="law-body">
+                            <h5>Servicios de Apoyo Pedagógico</h5>
+                            <p class="parrafo-principal">Este decreto reglamenta la organización del servicio de apoyo
+                                pedagógico para la atención de los
+                                estudiantes con discapacidad y con capacidades o con talentos excepcionales en el marco
+                                de la
+                                educación inclusiva. Establece las condiciones para la prestación del servicio
+                                educativo, la
+                                organización de la oferta, las características y dotación de los establecimientos que
+                                atienden
+                                estudiantes con discapacidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="law-item">
+                    <button class="law-btn" data-law="decreto1421">
+                        <div class="law-title">
+                            <h4>Decreto 1421 de 2017</h4>
+                            <p>Reglamentación integral de la educación inclusiva</p>
+                        </div>
+                        <span class="law-icon">+</span>
+                    </button>
+                    <div class="law-content" id="decreto1421">
+                        <div class="law-body">
+                            <h5>Educación Inclusiva para Personas con Discapacidad</h5>
+                            <p class="parrafo-principal">Este decreto reglamenta en el marco de la educación inclusiva
+                                la atención educativa a la
+                                población con discapacidad. Define los lineamientos generales para la atención educativa
+                                de las
+                                personas con discapacidad en los niveles de preescolar, básica y media. Establece las
+                                condiciones para garantizar el derecho a una educación de calidad a través del acceso,
+                                la
+                                permanencia, la participación y el aprendizaje en el sistema educativo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="titulo-seccion">Principios Fundamentales de la Inclusión</h2>
+            <p class="parrafo-principal">
+                La educación inclusiva se fundamenta en principios esenciales que buscan transformar el sistema
+                educativo
+                tradicional para garantizar que todos los estudiantes, independientemente de sus características
+                individuales,
+                puedan acceder, participar y aprender en igualdad de condiciones.
+            </p>
+
+            <div class="principios-container">
+                <div class="principio-item">
+                    <h4 class="principio-titulo">Diversidad como Valor</h4>
+                    <p class="parrafo-principal">Reconocer y valorar las diferencias individuales como una riqueza que
+                        enriquece
+                        el proceso educativo y prepara a los estudiantes para una sociedad diversa.</p>
+                </div>
+                <div class="principio-item">
+                    <h4 class="principio-titulo">Eliminación de Barreras</h4>
+                    <p class="parrafo-principal">Identificar y remover obstáculos físicos, pedagógicos, culturales y
+                        actitudinales que impidan el pleno desarrollo del potencial de cada estudiante.</p>
+                </div>
+                <div class="principio-item">
+                    <h4 class="principio-titulo">Igualdad de Oportunidades</h4>
+                    <p class="parrafo-principal">Garantizar que todos los estudiantes tengan acceso a las mismas
+                        oportunidades de aprendizaje, con los ajustes y apoyos necesarios según sus características
+                        individuales.</p>
+                </div>
+            </div>
+
+            <div class="image-space">
+                <img src="img/Inclusiondibujo.jpg" alt="Inclusión Educativa en Colombia" class="imagen-mediana">
+                <p class="pie-imagen">Representación gráfica de la educación inclusiva</p>
+            </div>
+        </section>
+
+        <!-- Sección Proyecto LUDIK -->
+        <section id="ludik" class="section">
+            <div class="ludik-header">
+                <div class="ludik-text">
+                    <h1>Proyecto LUDIK</h1>
+                    <p class="subtitulo-ludik">Plataforma Web Inclusiva para la Educación Especial</p>
+                </div>
+                <div class="ludik-logo">
+                    <img src="img/Ludik2.png" alt="Proyecto Ludik" class="imagen-logo-header">
+                </div>
+            </div>
+
+            <h2 class="titulo-seccion">Identificación de la Problemática</h2>
+            <p class="parrafo-principal">
+                El proyecto LUDIK surge como respuesta a una necesidad específica identificada en el Colegio San José de
+                Guanentá,
+                donde estudiantes con necesidades educativas diversas enfrentan múltiples dificultades debido a la
+                ausencia de
+                herramientas tecnológicas especializadas y accesibles. Esta problemática se agrava por la falta de
+                recursos
+                digitales que permitan adaptar contenidos pedagógicos, realizar seguimiento personalizado efectivo y
+                fortalecer
+                la comunicación integral entre todos los miembros de la comunidad educativa.
+            </p>
+            <p class="parrafo-principal">
+                Con base en estos indicadores y nuestro compromiso con la educación inclusiva, hemos decidido
+                participar
+                activamente en el <span class="highlight">Concurso Nacional de Programación para Colegios –
+                    Fedesoft – REDIS</span>,
+                desarrollando herramientas tecnológicas que contribuyan a mejorar la calidad educativa de todos
+                nuestros estudiantes y profesores.
+            </p>
+
+            <div class="santander-stats">
+                <h3 class="subtitulo">Contexto Departamental - Santander</h3>
+                <p class="parrafo-principal">
+                    Según datos oficiales de la <span class="highlight">Secretaría de Educación de Santander</span>,
+                    actualizados al 15 de septiembre de 2025, en el departamento se encuentran registrados en el Sistema
+                    de Matrículas Estudiantiles (SIMAT), un total de <span class="numero-destacado">3.217
+                        estudiantes</span>
+                    que presentan algún tipo de discapacidad, trastornos del aprendizaje o trastornos de conducta,
+                    distribuidos en las diferentes instituciones educativas del departamento.
+                </p>
+                <p class="parrafo-principal">
+                    Esta cifra representa un desafío significativo para el sistema educativo departamental y evidencia
+                    la necesidad urgente de desarrollar estrategias innovadoras y herramientas especializadas que
+                    contribuyan a mejorar la calidad de la educación inclusiva.
+                </p>
+            </div>
+
+            <h2 class="titulo-seccion">Análisis Causal</h2>
+
+            <h3 class="subtitulo">Causas Identificadas</h3>
+            <div class="causas-container">
+                <div class="causa-item">
+                    <div class="causa-icono profesional-icon"></div>
+                    <div class="causa-content">
+                        <h4>Carencia Tecnológica</h4>
+                        <p class="parrafo-principal">
+                            Ausencia de herramientas tecnológicas especializadas y adaptadas
+                            para estudiantes con diferentes tipos de discapacidad y necesidades educativas especiales.
+                        </p>
+                    </div>
+                </div>
+                <div class="causa-item">
+                    <div class="causa-icono profesional-icon"></div>
+                    <div class="causa-content">
+                        <h4>Formación Docente Limitada</h4>
+                        <p class="parrafo-principal">
+                            Insuficiente capacitación especializada del personal docente para atender
+                            adecuadamente la diversidad de necesidades educativas en el aula.
+                        </p>
+                    </div>
+                </div>
+                <div class="causa-item">
+                    <div class="causa-icono profesional-icon"></div>
+                    <div class="causa-content">
+                        <h4>Metodologías Tradicionales</h4>
+                        <p class="parrafo-principal">
+                            Escasez de metodologías pedagógicas innovadoras y recursos
+                            didácticos adaptados específicamente para estudiantes con necesidades educativas especiales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subtitulo">Consecuencias Observadas</h3>
+            <div class="consecuencias-container">
+                <div class="consecuencia-item">
+                    <div class="consecuencia-icono">📉</div>
+                    <div class="consecuencia-content">
+                        <h4>Bajo Rendimiento Académico</h4>
+                        <p class="parrafo-principal">Disminución significativa en el rendimiento académico de
+                            estudiantes
+                            de inclusión debido a la falta de adaptaciones curriculares apropiadas.</p>
+                    </div>
+                </div>
+                <div class="consecuencia-item">
+                    <div class="consecuencia-icono">⚖️</div>
+                    <div class="consecuencia-content">
+                        <h4>Ampliación de Brechas Educativas</h4>
+                        <p class="parrafo-principal">Incremento progresivo de las diferencias educativas entre
+                            estudiantes
+                            con y sin discapacidad, afectando la equidad en el aprendizaje.</p>
+                    </div>
+                </div>
+                <div class="causa-item">
+                    <div class="causa-icono">👨‍👩‍👧‍👦</div>
+                    <div class="causa-content">
+                        <h4>Desarticulación Familiar</h4>
+                        <p class="parrafo-principal">Limitado acompañamiento y participación de las familias en el
+                            proceso
+                            educativo debido a la falta de canales de comunicación efectivos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="titulo-seccion">La Solución: Plataforma LUDIK</h2>
+            <p class="parrafo-principal">
+                LUDIK es una <span class="highlight">plataforma web inclusiva e innovadora</span> diseñada
+                específicamente
+                para revolucionar la forma en que se abordan los procesos de enseñanza-aprendizaje en el contexto de la
+                educación especial e inclusiva. Esta herramienta tecnológica integral busca crear un ecosistema digital
+                colaborativo que facilite la interacción efectiva entre todos los actores de la comunidad educativa.
+            </p>
+
+            <div class="ludik-objective">
+                <h3 class="subtitulo">Objetivo Principal</h3>
+                <p class="parrafo-principal">
+                    Nuestro proyecto busca facilitar de manera asertiva, innovadora y eficiente a docentes,
+                    personal administrativo y directivos de la Institución Educativa, el acceso a un sistema
+                    de trabajo articulado y colaborativo que permita un mayor control, seguimiento detallado
+                    y gestión integral de la historia educativa y de salud de cada estudiante que requiera
+                    de ajustes razonables y apoyos pedagógicos especializados.
+                </p>
+            </div>
+
+            <h3 class="subtitulo">Características y Funcionalidades Principales</h3>
+            <div class="funcionalidades-container">
+                <div class="funcionalidad-item">
+                    <div class="funcionalidad-icono">👤</div>
+                    <div class="funcionalidad-content">
+                        <h4>Sistema de Usuarios Diferenciado</h4>
+                        <p class="parrafo-principal">Panel de control personalizado para docentes, padres de familia,
+                            estudiantes y administradores, con permisos y funcionalidades específicas para cada rol.</p>
+                    </div>
+                </div>
+                <div class="funcionalidad-item">
+                    <div class="funcionalidad-icono">🎯</div>
+                    <div class="funcionalidad-content">
+                        <h4>Actividades Interactivas Adaptadas</h4>
+                        <p class="parrafo-principal">Catálogo extenso de actividades pedagógicas interactivas diseñadas
+                            y adaptadas para diferentes tipos de discapacidad y estilos de aprendizaje.</p>
+                    </div>
+                </div>
+                <div class="funcionalidad-item">
+                    <div class="funcionalidad-icono">📊</div>
+                    <div class="funcionalidad-content">
+                        <h4>Seguimiento y Reportes Personalizados</h4>
+                        <p class="parrafo-principal">Sistema avanzado de seguimiento del progreso académico con
+                            generación automática de reportes detallados y personalizados para cada estudiante.</p>
+                    </div>
+                </div>
+                <div class="funcionalidad-item">
+                    <div class="funcionalidad-icono">📚</div>
+                    <div class="funcionalidad-content">
+                        <h4>Recursos Pedagógicos Accesibles</h4>
+                        <p class="parrafo-principal">Biblioteca digital completa con recursos educativos adaptados
+                            y accesibles, incluyendo materiales multimedia y herramientas de apoyo.</p>
+                    </div>
+                </div>
+                <div class="funcionalidad-item">
+                    <div class="funcionalidad-icono">💬</div>
+                    <div class="funcionalidad-content">
+                        <h4>Comunicación Directa e Integral</h4>
+                        <p class="parrafo-principal">Sistema de comunicación bidireccional que facilita el intercambio
+                            de información entre docentes, familias, estudiantes y personal especializado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sección de equipo desarrollador -->
+    <section id="desarrolladores" class="section">
+        <div class="developers-content-wrapper">
+            <h1>Desarrolladores y Equipo</h1>
+            <p class="parrafo-principal">
+                El proyecto LUDIK es el resultado del trabajo colaborativo y comprometido de un equipo multidisciplinario 
+                de estudiantes, docentes y asesores del <span class="highlight">Colegio San José de Guanentá</span>, 
+                especialidad de Sistemas. Nuestro equipo combina conocimientos técnicos, creatividad y un profundo 
+                compromiso con la educación inclusiva.
+            </p>
+
+        <!-- Imagen grupal del equipo -->
+        <div class="team-photo-container">
+            <img src="img/equipo_grupal.jpg" alt="Equipo de desarrollo LUDIK" class="team-group-photo">
+            <p class="pie-imagen">Equipo de desarrollo del proyecto LUDIK - Colegio San José de Guanentá</p>
+        </div>
+
+        <h2 class="titulo-seccion">Equipo de Liderazgo</h2>
+        <div class="leadership-team">
+            <!-- Mentor -->
+            <div class="team-member-card mentor-card">
+                <div class="member-photo-wrapper green-border">
+                    <img src="img/juan_daniel.png" alt="Juan Daniel - Mentor" class="member-photo">
+                </div>
+                <h3 class="member-name">Juan Daniel Uribe Perez</h3>
+                <p class="member-role mentor-role">Mentor</p>
+                <p class="member-description">
+                    Líder técnico del proyecto con amplia experiencia en desarrollo de software. Egresado del glorioso colegio San José de Guanentá
+                </p>
+            </div>
+
+            <!-- Docente enlace -->
+            <div class="team-member-card teacher-card">
+                <div class="member-photo-wrapper red-border">
+                    <img src="img/nestor.png" alt="Ing. Néstor - Docente enlace" class="member-photo">
+                </div>
+                <h3 class="member-name">Ing. Néstor Jésus Paez Sarmiento</h3>
+                <p class="member-role teacher-role">Docente enlace</p>
+                <p class="member-description">
+                    Docente de sistemas que coordina y supervisa el desarrollo del proyecto.
+                </p>
+            </div>
+
+            <!-- Asesora pedagógica -->
+            <div class="team-member-card advisor-card">
+                <div class="member-photo-wrapper blue-border">
+                    <img src="img/nadia_rocio.jpg" alt="Mg. Nadia Rocío - Asesora pedagógica" class="member-photo">
+                </div>
+                <h3 class="member-name">Mg. Nadia Rocío Parra</h3>
+                <p class="member-role advisor-role">Asesora pedagógica / Product Owner</p>
+                <p class="member-description">
+                    Experta en educación inclusiva, guía el enfoque pedagógico del proyecto.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="titulo-seccion">Equipo de Desarrollo</h2>
+        <p class="parrafo-principal">
+            Nuestro equipo de desarrollo está conformado por estudiantes de grado 11 de la especialidad de Sistemas, 
+            quienes aplican sus conocimientos en programación, diseño y gestión de proyectos para crear soluciones 
+            innovadoras en educación inclusiva.
+        </p>
+
+        <div class="development-team">
+            <!-- Diseñador -->
+            <div class="dev-member-card">
+                <div class="dev-photo-wrapper orange-border">
+                    <img src="img/max_henriquez.png" alt="Max Henríquez - Diseñador" class="dev-photo">
+                </div>
+                <h3 class="dev-name">Max Henríquez</h3>
+                <p class="dev-role designer-role">Diseñador</p>
+                <p class="dev-description">
+                    Responsable del diseño UI/UX, la experiencia visual y la función responsive de la plataforma LUDIK.
+                </p>
+            </div>
+
+            <!-- Full Stack -->
+            <div class="dev-member-card">
+                <div class="dev-photo-wrapper green-dev-border">
+                    <img src="img/achinti_morales.png" alt="Achinti Morales - Full Stack" class="dev-photo">
+                </div>
+                <h3 class="dev-name">Achinti Morales</h3>
+                <p class="dev-role fullstack-role">Full Stack</p>
+                <p class="dev-description">
+                    Desarrollador full stack encargado de la implementación de un chatbot.
+                </p>
+            </div>
+
+            <!-- Scrum Master -->
+            <div class="dev-member-card">
+                <div class="dev-photo-wrapper pink-border">
+                    <img src="img/sebastian_feo.png" alt="Sebastian Feo - Scrum Master" class="dev-photo">
+                </div>
+                <h3 class="dev-name">Sebastian Feo</h3>
+                <p class="dev-role scrum-role">Scrum Master</p>
+                <p class="dev-description">
+                    Coordina el equipo y asegura el seguimiento de las metodologías ágiles.
+                </p>
+            </div>
+
+            <!-- BackEnd -->
+            <div class="dev-member-card">
+                <div class="dev-photo-wrapper pink-dev-border">
+                    <img src="img/edwin_plata.jpeg" alt="Edwin Plata - BackEnd" class="dev-photo">
+                </div>
+                <h3 class="dev-name">Edwin Plata</h3>
+                <p class="dev-role backend-role">BackEnd</p>
+                <p class="dev-description">
+                    Desarrollador backend especializado en bases de datos y lógica del servidor.
+                </p>
+            </div>
+
+            <!-- FrontEnd -->
+            <div class="dev-member-card">
+                <div class="dev-photo-wrapper blue-dev-border">
+                    <img src="img/andres_ruiz.png" alt="Andrés Ruiz - FrontEnd" class="dev-photo">
+                </div>
+                <h3 class="dev-name">Andrés Ruiz</h3>
+                <p class="dev-role frontend-role">FrontEnd</p>
+                <p class="dev-description">
+                    Desarrollador frontend enfocado en la interfaz de usuario y accesibilidad para las actividades prediseñadas.
+                </p>
+            </div>
+
+    </section>
+
+    <footer class="pie-pagina">
+        Copyright © 2025 Todos los derechos reservados | Sistemas 11 | Colegio San José de Guanentá
+    </footer>
+
+    <script>
+        // Navegación interna por pestañas
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const targetSection = this.getAttribute('data-section');
+
+                // Remover clase active de todos los botones y secciones
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+
+                // Añadir clase active al botón clickeado y su sección correspondiente
+                this.classList.add('active');
+                document.getElementById(targetSection).classList.add('active');
+            });
+        });
+
+        // Funcionalidad para expandir/contraer contenido de leyes
+        document.querySelectorAll('.law-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const lawId = this.getAttribute('data-law');
+                const content = document.getElementById(lawId);
+                const lawItem = this.closest('.law-item');
+                const icon = this.querySelector('.law-icon');
+
+                // Toggle del contenido
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                    lawItem.classList.remove('expanded');
+                    icon.textContent = '+';
+                } else {
+                    // Cerrar todos los otros contenidos
+                    document.querySelectorAll('.law-content').forEach(c => {
+                        c.style.display = 'none';
+                    });
+                    document.querySelectorAll('.law-item').forEach(item => {
+                        item.classList.remove('expanded');
+                    });
+                    document.querySelectorAll('.law-icon').forEach(i => {
+                        i.textContent = '+';
+                    });
+
+                    // Abrir el seleccionado
+                    content.style.display = 'block';
+                    lawItem.classList.add('expanded');
+                    icon.textContent = '−';
+                }
+            });
+        });
+
+        // Animación de entrada para las secciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas las secciones
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(section);
+            });
+        });
+
+        // Efecto hover en las imágenes (excepto las que tienen clase no-hover)
+        document.querySelectorAll('.image-space img:not(.no-hover)').forEach(img => {
+            img.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+
+            img.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Efecto de cambio de opacidad del header al hacer scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+
+            if (scrolled > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+
+</html>

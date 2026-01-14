@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - LUDIK</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css\Perfil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header y Menú Extraíble -->
+    <div class="header">
+        <div class="left-section">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <span class="menu-text">MENÚ</span>
+        </div>
+
+        <div class="centro">
+            <h1 class="titulo-ludik">
+                <img src="img\LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
+            </h1>
+        </div>
+
+        <div class="right-section">
+            <img src="img/Ludik2.png" alt="Logo Ludik" class="header-logo">
+            <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
+            <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="menu-title">Panel De Control</div>
+        </div>
+        <div class="menu-buttons">
+            <button class="menu-button">
+                <span class="menu-icon">🏠</span>
+                Volver a Interfaz
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">👥</span>
+                Estudiantes
+            </button>
+            <button class="menu-button" id="btnCrearCuentas">
+                <span class="menu-icon">➕</span>
+                Crear Cuentas
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📚</span>
+                Actividades
+            </button>
+            <button class="menu-button" id="btnIA">
+                <span class="menu-icon">🤖</span>
+                Asistente IA
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📝</span>
+                Registrar un nuevo estudiante
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📋</span>
+                Registrar un PIAR y diagnóstico médico
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📊</span>
+                Crear una Valoración Pedagógica
+            </button>
+            <button class="menu-button" id="btnDocumentos">
+                <span class="menu-icon">📁</span>
+                Documentos
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">💬</span>
+                Comunicate
+            </button>
+            <a href="manual.pdf" download class="menu-button">
+                <span class="menu-icon">📘</span>
+                Manual de Usuario
+            </a>
+
+            <button class="menu-button">
+                <span class="menu-icon">❓</span>
+                Ayuda
+            </button>
+            <button class="menu-button close-session">
+                <span class="menu-icon">🚪</span>
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenido Principal del Perfil -->
+    <div class="perfil-container">
+        <!-- Card principal del usuario -->
+        <div class="perfil-main-card">
+            <div class="perfil-header">
+                <img id="fotoPerfil" src="" alt="Foto del usuario" class="perfil-foto">
+                <h2 id="nombreUsuario">Cargando..</h2>
+                <span id="rolBadge" class="rol-badge">Usuario</span>
+            </div>
+
+            <div class="perfil-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span><strong>Email:</strong> <span id="emailUsuario">-</span></span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span><strong>Teléfono:</strong> <span id="celularUsuario">-</span></span>
+                </div>
+                <div id="infoAdicional" class="info-item" style="display: none;">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="infoAdicionalTexto"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards dinámicas según el rol -->
+        <div class="perfil-cards-container" id="cardsContainer">
+            <!-- Las cards se generarán dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Cargando perfil...</p>
+    </div>
+
+    <!-- Scripts del Menú -->
+    <script>
+        // VERIFICAR ROL INMEDIATAMENTE - SIMPLIFICADO
+        document.addEventListener('DOMContentLoaded', function () {
+            const rol = localStorage.getItem('rol');
+            console.log('Rol en localStorage:', rol);
+
+            // Eliminar cualquier HR o línea que pueda existir
+            const lineas = document.querySelectorAll('hr, .separator, .line, .divider');
+            lineas.forEach(linea => {
+                console.log('Eliminando línea encontrada');
+                linea.remove();
+            });
+
+            // Si NO es admin, ocultar el botón
+            if (rol !== 'admin') {
+                const botonCrear = document.getElementById('btnCrearCuentas');
+                if (botonCrear) {
+                    botonCrear.style.display = 'none';
+                    console.log('Botón ocultado para rol:', rol);
+                }
+            }
+        });
+    </script>
+
+    <script src="Js\Perfil.js"></script>
+    <script src="Js/Roles_menu.js"></script>
+</body>
+
+</html>

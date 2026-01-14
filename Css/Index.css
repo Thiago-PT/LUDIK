@@ -1,0 +1,1861 @@
+/* CSS para Index.html - Versión Responsive Mejorada */
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* TIPOGRAFÍA CONSISTENTE */
+.parrafo-principal {
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    color: #64748b !important;
+    margin-bottom: 20px !important;
+    text-align: justify;
+}
+
+.subtitulo {
+    color: #475569 !important;
+    margin: 30px 0 15px 0 !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+}
+
+.titulo-seccion {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin: 40px 0 25px 0 !important;
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.numero-destacado {
+    color: #667eea !important;
+    font-weight: 700 !important;
+    font-size: 1.2em !important;
+}
+
+.cita {
+    font-size: 1.2rem !important;
+    font-style: italic !important;
+    color: #2c3e50 !important;
+    margin-bottom: 15px !important;
+    line-height: 1.6 !important;
+    position: relative;
+}
+
+.autor-cita {
+    font-size: 1rem !important;
+    color: #667eea !important;
+    font-weight: 600 !important;
+}
+
+.subtitulo-ludik {
+    font-size: 1.2rem !important;
+    color: #667eea !important;
+    font-weight: 500 !important;
+    margin-top: 10px !important;
+    font-style: italic;
+}
+
+.pie-imagen {
+    font-size: 0.9rem !important;
+    color: #64748b !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+    font-style: italic;
+}
+
+/* Header mejorado con botón de sesión integrado */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.encabezado-ludik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    transform: none !important;
+}
+
+.lado-izq,
+.lado-der {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.lado-der {
+    justify-content: flex-end;
+}
+
+.logo-institucion,
+.logo-ludik {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.no-hover {
+    transition: none !important;
+}
+
+.no-hover:hover {
+    transform: none !important;
+}
+
+.especialidad {
+    font-size: 0.9rem;
+    color: #6366f1;
+    font-weight: 500;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.centro {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-ludik {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 3px;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* Contenido principal - Ajuste para el header fijo */
+.main-content {
+    background: white;
+    margin: 40px auto;
+    margin-top: 120px;
+    max-width: 1200px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación interna mejorada */
+.nav-interno {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: white;
+    color: #667eea;
+    border: 2px solid transparent;
+    background-image:
+        linear-gradient(white, white),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    border: 2px solid transparent;
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    border: 2px solid transparent;
+}
+
+.nav-btn.active::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Secciones mejoradas */
+.section {
+    padding: 50px 50px;
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.section.active {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.section:not(:last-child) {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.section h1 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 25px !important;
+    position: relative;
+}
+
+.section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.highlight {
+    color: #667eea !important;
+    font-weight: 600 !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+}
+
+/* Cita mejorada con imagen del atleta */
+.quote-section {
+    margin: 40px 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-radius: 16px;
+    padding: 30px;
+    border-left: 5px solid #667eea;
+}
+
+.quote-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.quote-text {
+    flex: 2;
+}
+
+.quote-text blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: #667eea;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    opacity: 0.3;
+}
+
+.quote-image {
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+.athlete-image {
+    width: 120px !important;
+    height: 160px !important;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.athlete-image:hover {
+    transform: scale(1.05);
+}
+
+/* Definición de inclusión mejorada */
+.inclusion-definition {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 4px solid #10b981;
+}
+
+.inclusion-definition h3 {
+    color: #10b981 !important;
+    margin-bottom: 15px !important;
+}
+
+.reality-check {
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    border-left: 4px solid #ffc107;
+}
+
+.inclusion-stats {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.03) 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 4px solid #10b981;
+}
+
+.stat-highlight {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    font-size: 1.1rem;
+}
+
+.santander-stats {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(220, 38, 38, 0.03) 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 4px solid #ef4444;
+}
+
+.santander-stats h3 {
+    color: #ef4444 !important;
+    margin-bottom: 15px !important;
+}
+
+/* BOTONES DESPLEGABLES COMPLETAMENTE REDISEÑADOS */
+.laws-container {
+    margin: 30px 0;
+}
+
+.law-item {
+    margin: 20px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    background: white;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.law-item:hover {
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.law-btn {
+    width: 100%;
+    text-align: left;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.01) 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.law-btn:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-left-color: #764ba2;
+}
+
+.law-title {
+    flex: 1;
+}
+
+.law-title h4 {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 8px !important;
+}
+
+.law-title p {
+    font-size: 1rem !important;
+    color: #64748b !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+}
+
+.law-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.law-item.expanded .law-icon {
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.law-content {
+    display: none;
+    background: white;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.law-body {
+    padding: 30px;
+}
+
+.law-body h5 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #667eea !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+/* Principios de inclusión */
+.principios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.principio-item {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.03) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    border-left: 5px solid #10b981;
+    transition: transform 0.3s ease;
+}
+
+.principio-item:hover {
+    transform: translateY(-3px);
+}
+
+.principio-titulo {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #10b981 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Header específico para LUDIK */
+.ludik-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+
+.ludik-text {
+    flex: 1;
+}
+
+.ludik-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.imagen-logo-header {
+    width: 120px !important;
+    height: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: none !important;
+}
+
+.imagen-logo-header:hover {
+    transform: none !important;
+}
+
+/* Contenedores para causas y consecuencias */
+.causas-container,
+.consecuencias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.causa-item,
+.consecuencia-item {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.02) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    border-left: 5px solid #667eea;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.causa-item:hover,
+.consecuencia-item:hover {
+    transform: translateY(-3px);
+}
+
+.causa-icono,
+.consecuencia-icono {
+    font-size: 2rem;
+    flex-shrink: 0;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.causa-content h4,
+.consecuencia-content h4 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    margin-bottom: 12px !important;
+}
+
+/* Funcionalidades de LUDIK */
+.funcionalidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.funcionalidad-item {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, rgba(5, 150, 105, 0.02) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    border-left: 5px solid #10b981;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.funcionalidad-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+}
+
+.funcionalidad-icono {
+    font-size: 2rem;
+    flex-shrink: 0;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.funcionalidad-content h4 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #10b981 !important;
+    margin-bottom: 12px !important;
+}
+
+.ludik-objective {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px 0;
+    border-left: 5px solid #667eea;
+}
+
+.ludik-objective h3 {
+    color: #667eea !important;
+    margin-bottom: 20px !important;
+}
+
+/* Imágenes mejoradas */
+.image-space {
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.image-space img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.image-space img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-colegio {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-mediana {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px !important;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer mejorado */
+.pie-pagina {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sección Estudiantes */
+.students-section {
+    margin: 50px 0;
+}
+
+.students-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.student-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    border-left: 5px solid #667eea;
+}
+
+.student-text {
+    flex: 2;
+}
+
+.student-image {
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+.student-photo {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.student-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el collage */
+.collage-space {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.collage-img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.collage-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-ludik-header {
+    height: 80px;
+    width: auto;
+    display: inline-block;
+}
+
+/* ===============================================
+   SECCIÓN DESARROLLADORES Y EQUIPO
+   =============================================== */
+
+/* Ajuste especial para sección desarrolladores - fondo blanco contenido */
+#desarrolladores {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    padding: 40px 20px !important;
+}
+
+.developers-content-wrapper {
+    background: white;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto grupal del equipo */
+.team-photo-container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.team-group-photo {
+    max-width: 90%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-group-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Equipo de liderazgo */
+.leadership-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.team-member-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.team-member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+.mentor-card:hover {
+    border-color: #10b981;
+}
+
+.teacher-card:hover {
+    border-color: #ef4444;
+}
+
+.advisor-card:hover {
+    border-color: #667eea;
+}
+
+.member-photo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover .member-photo-wrapper {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.green-border {
+    border: 4px solid #10b981;
+}
+
+.red-border {
+    border: 4px solid #ef4444;
+}
+
+.blue-border {
+    border: 4px solid #667eea;
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.member-name {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin: 15px 0 10px 0 !important;
+}
+
+.member-role {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.mentor-role {
+    background: #10b981;
+    color: white;
+}
+
+.teacher-role {
+    background: #ef4444;
+    color: white;
+}
+
+.advisor-role {
+    background: #667eea;
+    color: white;
+}
+
+.member-description {
+    font-size: 1rem !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin-top: 15px !important;
+}
+
+/* Equipo de desarrollo */
+.development-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.dev-member-card {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.01) 100%);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dev-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    background: white;
+}
+
+.dev-photo-wrapper {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 15px;
+    border-radius: 16px;
+    padding: 6px;
+    background: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.dev-member-card:hover .dev-photo-wrapper {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.orange-border {
+    border: 3px solid #ff6a00;
+}
+
+.green-dev-border {
+    border: 3px solid #00ff7b;
+}
+
+.pink-border {
+    border: 3px solid #ff0000;
+}
+
+.pink-dev-border {
+    border: 3px solid #ec4899;
+}
+
+.blue-dev-border {
+    border: 3px solid #667eea;
+}
+
+.dev-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dev-name {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin: 12px 0 8px 0 !important;
+}
+
+.dev-role {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+
+.designer-role {
+    background: #ff6a00;
+    color: white;
+}
+
+.fullstack-role {
+    background: #00ff7b;
+    color: white;
+}
+
+.scrum-role {
+    background: #ff0000;
+    color: white;
+}
+
+.backend-role {
+    background: #ec4899;
+    color: white;
+}
+
+.frontend-role {
+    background: #667eea;
+    color: white;
+}
+
+.dev-description {
+    font-size: 0.95rem !important;
+    color: #64748b !important;
+    line-height: 1.5 !important;
+    margin-top: 12px !important;
+}
+
+/* Sección de metodología */
+.methodology-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px 0;
+    border-left: 5px solid #667eea;
+}
+
+.methodology-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.methodology-item {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.methodology-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.methodology-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.methodology-item h4 {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #667eea !important;
+    margin-bottom: 12px !important;
+}
+
+/* Sección de patrocinadores */
+.sponsors-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.03) 100%);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px 0;
+    border-left: 5px solid #10b981;
+}
+
+.sponsors-logos {
+    margin-top: 25px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN - MEJORAS COMPLETAS
+   =============================================== */
+
+/* Tablets grandes y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+    .encabezado-ludik {
+        padding: 20px 30px;
+    }
+
+    .main-content {
+        margin: 30px 20px;
+        margin-top: 110px;
+    }
+
+    .section {
+        padding: 40px 35px;
+    }
+
+    .nav-interno {
+        padding: 25px 30px;
+    }
+}
+
+/* Tablets (hasta 768px) */
+@media (max-width: 768px) {
+    /* Header responsive - MEJORADO Y OPTIMIZADO */
+    .encabezado-ludik {
+        flex-direction: row;
+        padding: 10px 15px;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .lado-izq {
+        width: auto;
+        justify-content: flex-start;
+        gap: 8px;
+        flex: 0 0 auto;
+    }
+
+    /* Ocultar el texto de especialidad en móviles */
+    .especialidad {
+        display: none;
+    }
+
+    .centro {
+        width: auto;
+        order: 0;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .lado-izq {
+        order: 0;
+    }
+
+    .lado-der {
+        width: auto;
+        order: 0;
+        justify-content: flex-end;
+        gap: 8px;
+        flex: 0 0 auto;
+    }
+
+    .titulo-ludik {
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .imagen-ludik-header {
+        height: 40px;
+    }
+
+    .logo-institucion,
+    .logo-ludik {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+    }
+
+    .btn-login {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    /* Navegación interna */
+    .nav-interno {
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    /* Contenido principal - AJUSTE CRÍTICO */
+    .main-content {
+        margin: 20px 15px;
+        margin-top: 90px;
+        border-radius: 16px;
+    }
+
+    .section {
+        padding: 35px 25px;
+    }
+
+    .section h1 {
+        font-size: 2rem !important;
+    }
+
+    .titulo-seccion {
+        font-size: 1.6rem !important;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem !important;
+    }
+
+    .parrafo-principal {
+        font-size: 1.05rem !important;
+    }
+
+    /* Imágenes */
+    .imagen-colegio {
+        max-width: 95%;
+    }
+
+    .imagen-mediana {
+        max-width: 250px !important;
+    }
+
+    .imagen-logo-header {
+        width: 100px !important;
+    }
+
+    .collage-img {
+        max-width: 95%;
+    }
+
+    /* Citas con imagen */
+    .quote-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .quote-image {
+        order: -1;
+    }
+
+    .athlete-image {
+        width: 100px !important;
+        height: 130px !important;
+    }
+
+    .cita {
+        font-size: 1.1rem !important;
+    }
+
+    /* Header de LUDIK */
+    .ludik-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .ludik-logo {
+        order: -1;
+    }
+
+    /* Botones de leyes */
+    .law-btn {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .law-title h4 {
+        font-size: 1.15rem !important;
+    }
+
+    .law-title p {
+        font-size: 0.95rem !important;
+    }
+   
+    .law-body {
+        padding: 25px 20px;
+    }
+
+    .law-body h5 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Tarjetas de estudiantes */
+    .student-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .student-image {
+        order: -1;
+        margin-bottom: 15px;
+    }
+
+    /* Contenedores grid */
+    .principios-container,
+    .causas-container,
+    .consecuencias-container,
+    .funcionalidades-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Cajas de información */
+    .inclusion-stats,
+    .santander-stats,
+    .inclusion-definition,
+    .reality-check,
+    .ludik-objective {
+        padding: 20px;
+        margin: 25px 0;
+    }
+
+    .stat-highlight {
+        padding: 18px;
+        font-size: 1.05rem;
+    }
+
+    /* Sección desarrolladores - RESPONSIVE */
+    .leadership-team {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .development-team {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .member-photo-wrapper {
+        width: 170px;
+        height: 170px;
+    }
+
+    .dev-photo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .team-group-photo {
+        max-width: 95%;
+    }
+
+    .methodology-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste contenedor desarrolladores */
+    #desarrolladores {
+        padding: 20px 15px !important;
+    }
+
+    .developers-content-wrapper {
+        padding: 35px 25px;
+        border-radius: 16px;
+    }
+}
+
+/* Móviles grandes (hasta 576px) */
+@media (max-width: 576px) {
+    /* Header */
+    .encabezado-ludik {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .titulo-ludik {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .imagen-ludik-header {
+        height: 35px;
+    }
+
+    .logo-institucion,
+    .logo-ludik {
+        width: 28px;
+        height: 28px;
+    }
+
+    .especialidad {
+        display: none;
+    }
+
+    .btn-login {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    /* Contenido principal */
+    .main-content {
+        margin: 15px 10px;
+        margin-top: 75px;
+        border-radius: 12px;
+    }
+
+    .section {
+        padding: 30px 20px;
+    }
+
+    .section h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .titulo-seccion {
+        font-size: 1.5rem !important;
+        margin: 35px 0 20px 0 !important;
+    }
+
+    .subtitulo {
+        font-size: 1.15rem !important;
+        margin: 25px 0 12px 0 !important;
+    }
+
+    .parrafo-principal {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 18px !important;
+    }
+
+    /* Navegación */
+    .nav-interno {
+        padding: 18px 15px;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* Imágenes */
+    .imagen-colegio {
+        max-width: 98%;
+    }
+
+    .imagen-mediana {
+        max-width: 200px !important;
+    }
+
+    .imagen-logo-header {
+        width: 80px !important;
+    }
+
+    .collage-img {
+        max-width: 98%;
+    }
+
+    /* Citas */
+    .cita {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .autor-cita {
+        font-size: 0.95rem !important;
+    }
+
+    .athlete-image {
+        width: 90px !important;
+        height: 120px !important;
+    }
+
+    .student-photo {
+        width: 100px;
+        height: 140px;
+    }
+
+    /* Botones de leyes */
+    .law-btn {
+        padding: 18px 15px;
+    }
+
+    .law-title h4 {
+        font-size: 1.05rem !important;
+    }
+
+    .law-title p {
+        font-size: 0.9rem !important;
+    }
+
+    .law-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1.3rem;
+    }
+
+    .law-body {
+        padding: 20px 15px;
+    }
+
+    .law-body h5 {
+        font-size: 1.05rem !important;
+    }
+
+    /* Tarjetas y contenedores */
+    .causa-item,
+    .consecuencia-item,
+    .funcionalidad-item,
+    .principio-item {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .causa-icono,
+    .consecuencia-icono,
+    .funcionalidad-icono {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+
+    .causa-content h4,
+    .consecuencia-content h4,
+    .funcionalidad-content h4,
+    .principio-titulo {
+        font-size: 1.1rem !important;
+    }
+
+    /* Cajas de información */
+    .inclusion-stats,
+    .santander-stats,
+    .inclusion-definition,
+    .reality-check,
+    .ludik-objective,
+    .quote-section {
+        padding: 18px;
+        margin: 20px 0;
+    }
+
+    .stat-highlight {
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .numero-destacado {
+        font-size: 1.15em !important;
+    }
+
+    /* Footer */
+    .pie-pagina {
+        padding: 25px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Sección desarrolladores móviles */
+    .team-member-card {
+        padding: 25px 20px;
+    }
+
+    .dev-member-card {
+        padding: 20px 15px;
+    }
+
+    .member-photo-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .dev-photo-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .member-name {
+        font-size: 1.3rem !important;
+    }
+
+    .dev-name {
+        font-size: 1.2rem !important;
+    }
+
+    .methodology-section,
+    .sponsors-section {
+        padding: 25px 20px;
+    }
+
+    .methodology-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Móviles pequeños (hasta 375px) */
+@media (max-width: 375px) {
+    .encabezado-ludik {
+        padding: 6px 8px;
+    }
+
+    .titulo-ludik {
+        font-size: 1.2rem;
+        letter-spacing: 0.8px;
+    }
+
+    .imagen-ludik-header {
+        height: 30px;
+    }
+
+    .logo-institucion,
+    .logo-ludik {
+        width: 24px;
+        height: 24px;
+    }
+
+    .btn-login {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    .main-content {
+        margin: 10px 8px;
+        margin-top: 70px;
+    }
+
+    .section {
+        padding: 25px 15px;
+    }
+
+    .section h1 {
+        font-size: 1.6rem !important;
+    }
+
+    .titulo-seccion {
+        font-size: 1.4rem !important;
+    }
+
+    .subtitulo {
+        font-size: 1.1rem !important;
+    }
+
+    .parrafo-principal {
+        font-size: 0.95rem !important;
+    }
+
+    .nav-interno {
+        padding: 15px 12px;
+    }
+
+    .nav-btn {
+        padding: 9px 16px;
+        font-size: 0.85rem;
+    }
+
+    .imagen-mediana {
+        max-width: 180px !important;
+    }
+
+    .imagen-logo-header {
+        width: 70px !important;
+    }
+
+    .athlete-image {
+        width: 80px !important;
+        height: 110px !important;
+    }
+
+    .student-photo {
+        width: 90px;
+        height: 130px;
+    }
+
+    .law-btn {
+        padding: 16px 12px;
+    }
+
+    .law-title h4 {
+        font-size: 1rem !important;
+    }
+
+    .law-title p {
+        font-size: 0.85rem !important;
+    }
+
+    .law-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+
+    .law-body {
+        padding: 18px 12px;
+    }
+
+    .causa-item,
+    .consecuencia-item,
+    .funcionalidad-item,
+    .principio-item {
+        padding: 18px;
+    }
+
+    .causa-icono,
+    .consecuencia-icono,
+    .funcionalidad-icono {
+        font-size: 1.6rem;
+        padding: 8px;
+    }
+
+    .inclusion-stats,
+    .santander-stats,
+    .inclusion-definition,
+    .reality-check,
+    .ludik-objective,
+    .quote-section {
+        padding: 16px;
+    }
+
+    .stat-highlight {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    .pie-pagina {
+        padding: 20px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Desarrolladores móviles pequeños */
+    .member-photo-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .dev-photo-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member-card {
+        padding: 20px 15px;
+    }
+
+    .dev-member-card {
+        padding: 18px 12px;
+    }
+}
+
+/* Pantallas muy pequeñas (hasta 320px) */
+@media (max-width: 320px) {
+    .titulo-ludik {
+        font-size: 1.4rem;
+    }
+
+    .section h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .titulo-seccion {
+        font-size: 1.3rem !important;
+    }
+
+    .nav-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .parrafo-principal {
+        font-size: 0.9rem !important;
+    }
+
+    .cita {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* Ajustes para orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-content {
+        margin-top: 140px;
+    }
+
+    .section {
+        padding: 30px 25px;
+    }
+
+    .encabezado-ludik {
+        padding: 10px 20px;
+    }
+}
+
+/* Optimización para impresión */
+@media print {
+    header {
+        position: relative;
+    }
+
+    .main-content {
+        margin-top: 0;
+        box-shadow: none;
+    }
+
+    .nav-interno,
+    .btn-login {
+        display: none;
+    }
+
+    .section {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .law-content {
+        display: block !important;
+    }
+}

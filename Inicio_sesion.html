@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDIK - Inicio de Sesión</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/Inicio_sesion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="Inicio_sesion">
+            <div class="Sesion_titulo">
+                <h1 class="titulo">Inicio de Sesión</h1>
+                <p class="subtitulo">Accede a la plataforma educativa inclusiva</p>
+            </div>
+
+            <div class="Cont_logo">
+                <div class="logo-container">
+                    <img src="img/Ludik2.png" alt="Logo de LUDIK" width="200" height="200">
+                </div>
+            </div>
+
+            <div class="Botones_usuarios">
+                <button class="btn_adm" onclick="mostrarFormulario('admin')">
+                    <span class="btn-icon">👨‍💼</span>
+                    Admin
+                </button>
+                <button class="btn_dir" onclick="mostrarFormulario('directivo')">
+                    <span class="btn-icon">👩‍💼</span>
+                    Directivo
+                </button>
+                <button class="btn_prof" onclick="mostrarFormulario('docente')">
+                    <span class="btn-icon">👨‍🏫</span>
+                    Docente
+                </button>
+                <button class="btn_padr" onclick="mostrarFormulario('acudiente')">
+                    <span class="btn-icon">👨‍👩‍👧‍👦</span>
+                    Acudiente
+                </button>
+            </div>
+
+
+            <div class="Formularios_sesion">
+                <div id="mensaje_rol" class="mensaje-inicial">
+                    <p>Selecciona tu rol para acceder al sistema</p>
+                </div>
+
+                <!-- Formulario Administrador -->
+                <div id="form_admin" class="formulario_admin">
+                    <h3>Acceso Administrador</h3>
+                    <div class="form-icon-container">
+                        <img src="img/logoadmin.png" alt="Logo de administrador" width="120" height="120">
+                    </div>
+                    <form method="POST" action="php/Login.php">
+                        <input type="hidden" name="rol" value="admin">
+                        <div class="input-group">
+                            <input type="text" name="email" placeholder="Usuario o Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="contrasena" placeholder="Contraseña" required id="pass_admin">
+                            <span class="toggle-pass" onclick="togglePassword('pass_admin', this)">👁</span>
+                        </div>
+                        <button class="login-btn" type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Directivo -->
+                <div id="form_directivo" class="formulario_directivo" style="display: none;">
+                    <h3>Acceso Directivo</h3>
+                    <div class="form-icon-container">
+                        <img src="img/directivoimg.png" alt="Logo de directivo" width="120" height="120">
+                    </div>
+                    <form method="POST" action="php/Login.php">
+                        <input type="hidden" name="rol" value="directivo">
+                        <div class="input-group">
+                            <input type="text" name="email" placeholder="Usuario o Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="contrasena" placeholder="Contraseña" required
+                                id="pass_directivo">
+                            <span class="toggle-pass" onclick="togglePassword('pass_directivo', this)">👁</span>
+                        </div>
+                        <button class="login-btn" type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+
+
+                <!-- Formulario Docente -->
+                <div id="form_docente" class="formulario_docente">
+                    <h3>Acceso Docente</h3>
+                    <div class="form-icon-container">
+                        <img src="img/logoprofe.png" alt="Logo de docente" width="120" height="120">
+                    </div>
+                    <form method="POST" action="php/Login.php">
+                        <input type="hidden" name="rol" value="docente">
+                        <div class="input-group">
+                            <input type="text" name="email" placeholder="Usuario o Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="contrasena" placeholder="Contraseña" required
+                                id="pass_docente">
+                            <span class="toggle-pass" onclick="togglePassword('pass_docente', this)">👁</span>
+                        </div>
+                        <button class="login-btn" type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+
+                <!-- Formulario Acudiente -->
+                <div id="form_acudiente" class="formulario_acudiente">
+                    <h3>Acceso Acudiente</h3>
+                    <div class="form-icon-container">
+                        <img src="img/logopadre.png" alt="Logo de acudiente" width="120" height="120">
+                    </div>
+                    <form method="POST" action="php/Login.php">
+                        <input type="hidden" name="rol" value="acudiente">
+                        <div class="input-group">
+                            <input type="text" name="email" placeholder="Usuario o Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="contrasena" placeholder="Contraseña" required
+                                id="pass_acudiente">
+                            <span class="toggle-pass" onclick="togglePassword('pass_acudiente', this)">👁</span>
+                        </div>
+                        <button class="login-btn" type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Botón regresar -->
+    <button class="back-btn" onclick="goBackOrRedirect('index.html')">⬅ Regresar</button>
+
+    <footer class="pie-pagina">
+        Copyright © 2025 Todos los derechos reservados | Sistemas 11 | Colegio San José de Guanentá
+    </footer>
+
+    <script>
+        function mostrarFormulario(rol) {
+            document.getElementById('mensaje_rol').style.display = 'none';
+            document.getElementById('form_admin').style.display = 'none';
+            document.getElementById('form_directivo').style.display = 'none';
+            document.getElementById('form_docente').style.display = 'none';
+            document.getElementById('form_acudiente').style.display = 'none';
+
+            document.querySelectorAll('.Botones_usuarios button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            let formId = '';
+            if (rol === 'admin') {
+                formId = 'form_admin';
+                document.querySelector('.btn_adm').classList.add('active');
+            } else if (rol === 'directivo') {
+                formId = 'form_directivo';
+                document.querySelector('.btn_dir').classList.add('active');
+            } else if (rol === 'docente') {
+                formId = 'form_docente';
+                document.querySelector('.btn_prof').classList.add('active');
+            } else if (rol === 'acudiente') {
+                formId = 'form_acudiente';
+                document.querySelector('.btn_padr').classList.add('active');
+            }
+
+            if (formId) {
+                const formElement = document.getElementById(formId);
+                formElement.style.display = 'block';
+                formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Mostrar / ocultar contraseña
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.textContent = "🗙";
+            } else {
+                input.type = "password";
+                icon.textContent = "👁";
+            }
+        }
+
+        function goBackOrRedirect(ruta) {
+            if (ruta && ruta.trim() !== '') {
+                window.location.href = ruta;
+            } else {
+                window.history.back();
+            }
+        }
+    </script>
+</body>
+
+</html>

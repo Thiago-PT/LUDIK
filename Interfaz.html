@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDIK - Panel Principal</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css\Interfaz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="left-section">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <span class="menu-text">MENÚ</span>
+        </div>
+
+        <div class="centro">
+            <h1 class="titulo-ludik">
+                <img src="img\LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
+            </h1>
+        </div>
+
+        <div class="right-section">
+            <img src="img/Ludik2.png" alt="Logo Ludik" class="header-logo">
+            <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
+            <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="menu-title">Panel De Control</div>
+        </div>
+        <div class="menu-buttons">
+            <button class="menu-button">
+                <span class="menu-icon">👤</span>
+                Perfil
+            </button>
+            <button class="menu-button" id="btnEstudiantes">
+                <span class="menu-icon">👥</span>
+                Estudiantes
+            </button>
+            <button class="menu-button" id="btnCrearCuentas">
+                <span class="menu-icon">➕</span>
+                Crear Cuentas
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📚</span>
+                Actividades
+            </button>
+            <button class="menu-button" id="btnIA">
+                <span class="menu-icon">🤖</span>
+                Asistente IA
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📝</span>
+                Registrar un nuevo estudiante
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📋</span>
+                Registrar un PIAR y diagnóstico médico
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📊</span>
+                Valoraciones Pedagógicas
+            </button>
+            <button class="menu-button" id="btnModificarAsignacion">
+                <span class="menu-icon">📝</span>
+                Modificar asignación de los docentes
+            </button>
+            <button class="menu-button" id="btnDocumentos">
+                <span class="menu-icon">📁</span>
+                Documentos
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">💬</span>
+                Comunicate
+            </button>
+            <a href="manual.pdf" download class="menu-button">
+                <span class="menu-icon">📘</span>
+                Manual de Usuario
+            </a>
+            <button class="menu-button">
+                <span class="menu-icon">❓</span>
+                Ayuda
+            </button>
+            <button class="menu-button close-session">
+                <span class="menu-icon">🚪</span>
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="welcome-section">
+            <h1>Bienvenido a LUDIK</h1>
+            <p class="subtitle">Plataforma educativa inclusiva para el Colegio San José de Guanentá</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <h3>Estudiantes</h3>
+                        <p class="stat-number" id="numEstudiantes">...</p>
+                        <p class="stat-desc">Estudiantes activos</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-content">
+                        <h3>Actividades </h3>
+                        <p class="stat-number">+8</p>
+                        <p class="stat-desc">Discapacidades con actividades</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <h3>Inclusión</h3>
+                        <p class="stat-number">36%</p>
+                        <p class="stat-desc">Estudiantes con atención especial en el colegio</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>Acciones Rápidas</h2>
+                <div class="actions-grid" id="accionesRapidas">
+                    <!-- Los botones se insertan por JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // VERIFICAR ROL INMEDIATAMENTE - SIMPLIFICADO
+        document.addEventListener('DOMContentLoaded', function () {
+            // Abre el menú lateral automáticamente
+            const burgerInput = document.getElementById('burger');
+            const sideMenu = document.getElementById('sideMenu');
+            const overlay = document.getElementById('overlay');
+            if (burgerInput && sideMenu && overlay) {
+                burgerInput.checked = true;
+                sideMenu.classList.add('active');
+                overlay.classList.add('active');
+            }
+            const rol = localStorage.getItem('rol');
+            console.log('Rol en localStorage:', rol);
+
+            // Eliminar cualquier HR o línea que pueda existir
+            const lineas = document.querySelectorAll('hr, .separator, .line, .divider');
+            lineas.forEach(linea => {
+                console.log('Eliminando línea encontrada');
+                linea.remove();
+            });
+
+            // Si NO es admin, ocultar el botón
+            if (rol !== 'admin') {
+                const botonCrear = document.getElementById('btnCrearCuentas');
+                if (botonCrear) {
+                    botonCrear.style.display = 'none';
+                    console.log('Botón ocultado para rol:', rol);
+                }
+            }
+        });
+    </script>
+
+    <script src="Js/Interfaz.js"></script>
+    <script src="Js/Roles_menu.js"></script>
+</body>
+
+</html>
