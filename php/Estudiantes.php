@@ -229,16 +229,13 @@ function getStudentDetails($conexion, $rol, $usuario)
         $studentData['padre'] = getParentInfo($conexion, $studentData['id_padre'], 'padre');
         $studentData['acudiente'] = getParentInfo($conexion, $studentData['id_acudiente'], 'acudiente');
 
-        // Solo roles educativos pueden ver información médica y académica completa
-        if (in_array($rol, ['admin', 'directivo', 'docente_apoyo', 'docente'])) {
+        if (in_array($rol, ['admin', 'directivo', 'docente_apoyo', 'docente', 'acudiente', 'padre', 'madre'])) {
             $studentData['entorno_educativo'] = getEducationalEnvironment($conexion, $studentId);
             $studentData['info_medica'] = getMedicalInfo($conexion, $studentId);
             $studentData['piar'] = getPiarInfo($conexion, $studentId);
             $studentData['valoraciones'] = getPedagogicalEvaluations($conexion, $studentId);
             $studentData['descripcion_general'] = getGeneralDescription($conexion, $studentId);
-        } else {
-            // Padres solo ven información básica médica
-            $studentData['info_medica'] = getMedicalInfoBasic($conexion, $studentId);
+
         }
 
         // Información del grupo actual

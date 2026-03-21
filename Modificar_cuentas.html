@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cuentas - LUDIK</title>
+    <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/Gestion_cuentas.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="Js/auth-guard.js"></script>
+</head>
+
+<body>
+    <!-- Contenido Principal -->
+    <main class="main-content">
+
+        <!-- Dashboard Principal -->
+        <div id="dashboard" class="section">
+            <div class="dashboard-header">
+                <h1>Gestión de Cuentas</h1>
+            </div>
+
+            <!-- Tabs de tipo de usuario -->
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="docentes" onclick="cambiarTab('docentes')">
+                    <i class="fas fa-chalkboard-teacher"></i> Docentes
+                </button>
+                <button class="tab-btn" data-tab="docentes_apoyo" onclick="cambiarTab('docentes_apoyo')">
+                    <i class="fas fa-hands-helping"></i> Docentes de Apoyo
+                </button>
+                <button class="tab-btn" data-tab="directivos" onclick="cambiarTab('directivos')">
+                    <i class="fas fa-user-tie"></i> Directivos
+                </button>
+                <button class="tab-btn" data-tab="admins" onclick="cambiarTab('admins')">
+                    <i class="fas fa-user-shield"></i> Administradores
+                </button>
+            </div>
+
+            <!-- Filtros y búsqueda -->
+            <div class="filters-section">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="busqueda" placeholder="Buscar por nombre, email o teléfono..." oninput="filtrarTabla()">
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="stat-number" id="totalDocentes">0</div>
+                    <div class="stat-label">Docentes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="stat-number" id="totalDocentesApoyo">0</div>
+                    <div class="stat-label">Docentes de Apoyo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="stat-number" id="totalDirectivos">0</div>
+                    <div class="stat-label">Directivos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="stat-number" id="totalAdmins">0</div>
+                    <div class="stat-label">Administradores</div>
+                </div>
+            </div>
+
+            <!-- Mensajes -->
+            <div id="mensaje-container"></div>
+
+            <!-- Tabla de Cuentas -->
+            <div class="table-container">
+                <div id="loadingTable" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+                <table id="tablaCuentas" class="data-table">
+                    <thead id="tablaCuentasHead">
+                        <!-- Se llena dinámicamente según el tab -->
+                    </thead>
+                    <tbody id="tablaCuentasBody">
+                        <!-- Se carga dinámicamente -->
+                    </tbody>
+                </table>
+                <div id="noDataTable" class="no-data" style="display: none;">
+                    No hay cuentas registradas en esta categoría
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal de Edición -->
+    <div id="modalEditar" class="modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="tituloModalEditar">Editar Cuenta</h3>
+                <button id="btnCerrarModalEditar" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditar">
+                    <input type="hidden" id="editId" name="id">
+                    <input type="hidden" id="editTipo" name="tipo">
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="editNombre"><i class="fas fa-user"></i> Nombre Completo:</label>
+                            <input type="text" id="editNombre" name="nombre_completo" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail"><i class="fas fa-envelope"></i> Email:</label>
+                            <input type="email" id="editEmail" name="email" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editTelefono"><i class="fas fa-phone"></i> Teléfono:</label>
+                            <input type="text" id="editTelefono" name="telefono" placeholder="Número de teléfono">
+                        </div>
+                        <!-- Campo profesión solo para docentes_apoyo -->
+                        <div class="form-group" id="grupoProfesion" style="display: none;">
+                            <label for="editProfesion"><i class="fas fa-briefcase"></i> Profesión:</label>
+                            <input type="text" id="editProfesion" name="profesion" placeholder="Profesión">
+                        </div>
+                        <!-- Campo cargo solo para directivos -->
+                        <div class="form-group" id="grupoCargo" style="display: none;">
+                            <label for="editCargo"><i class="fas fa-id-badge"></i> Cargo:</label>
+                            <input type="text" id="editCargo" name="cargo" placeholder="Cargo institucional">
+                        </div>
+                        <!-- Campo es_director solo para docentes -->
+                        <div class="form-group form-group-full" id="grupoDirector" style="display: none;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="editEsDirector" name="es_director" value="1">
+                                <span><i class="fas fa-star"></i> Es Director de Grupo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="password-section">
+                        <h4><i class="fas fa-lock"></i> Cambiar Contraseña <span class="optional-label">(opcional)</span></h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="editContrasena">Nueva Contraseña:</label>
+                                <div class="input-password">
+                                    <input type="password" id="editContrasena" name="contrasena" placeholder="Dejar vacío para no cambiar">
+                                    <button type="button" class="btn-toggle-pass" onclick="togglePassword('editContrasena', this)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editConfirmarContrasena">Confirmar Contraseña:</label>
+                                <div class="input-password">
+                                    <input type="password" id="editConfirmarContrasena" placeholder="Confirmar nueva contraseña">
+                                    <button type="button" class="btn-toggle-pass" onclick="togglePassword('editConfirmarContrasena', this)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnCancelarEditar" class="btn-nav btn-outline">Cancelar</button>
+                <button id="btnConfirmarEditar" class="btn-nav btn-primary">
+                    <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div id="modalEliminar" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmar Eliminación</h3>
+                <button id="btnCerrarModalEliminar" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <p>¿Estás seguro de que deseas eliminar esta cuenta?</p>
+                <div class="cuenta-info" id="infoCuentaEliminar">
+                    <!-- Se llena dinámicamente -->
+                </div>
+                <p class="warning-text">Esta acción no se puede deshacer y eliminará todos los datos asociados.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnCancelarEliminar" class="btn-nav btn-outline">Cancelar</button>
+                <button id="btnConfirmarEliminar" class="btn-nav btn-danger">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+        <p>&copy; 2025 Sistema LUDIK - Gestión Educativa Inclusiva</p>
+    </footer>
+
+    <script src="Js/Gestion_cuentas.js"></script>
+    <script src="Js/menu-loader.js" defer></script>
+    <script src="Js/Interfaz.js" defer></script>
+</body>
+
+</html>
