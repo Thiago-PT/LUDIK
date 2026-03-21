@@ -1,9 +1,5 @@
 console.log("Modificar asignación docentes - Script cargado");
 
-// Variables globales
-const burger = document.getElementById('burger');
-const sideMenu = document.getElementById('sideMenu');
-const overlay = document.getElementById('overlay');
 let materiasData = [];
 let gruposData = [];
 let docentesData = [];
@@ -11,104 +7,11 @@ let anioSeleccionado = new Date().getFullYear();
 
 // Inicialización al cargar el DOM
 document.addEventListener('DOMContentLoaded', function () {
-    inicializarMenu();
-    verificarYAplicarRestricciones();
     cargarAnios();
     cargarMaterias();
     cargarGrupos();
     configurarEventListeners();
     cargarDocentes();
-});
-
-// ========== FUNCIONES DE MENÚ ==========
-function inicializarMenu() {
-    if (burger && sideMenu && overlay) {
-        burger.addEventListener('change', function () {
-            if (this.checked) {
-                sideMenu.classList.add('active');
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                sideMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        overlay.addEventListener('click', function () {
-            burger.checked = false;
-            sideMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-}
-
-function verificarYAplicarRestricciones() {
-    const rol = localStorage.getItem('rol');
-    console.log('Rol en localStorage:', rol);
-    eliminarBotonesPorRol();
-}
-
-function eliminarBotonesPorRol() {
-    const rol = localStorage.getItem("rol");
-    const todosLosBotones = document.querySelectorAll('.menu-button');
-
-    todosLosBotones.forEach(function (boton) {
-        const textoDelBoton = boton.textContent.trim().toLowerCase();
-
-        if (rol !== "admin") {
-            if (textoDelBoton.includes("crear cuenta")) {
-                boton.remove();
-            }
-            if (rol === "docente" || rol === "directivos") {
-                if (textoDelBoton.includes("registrar un nuevo estudiante") ||
-                    textoDelBoton.includes("registrar un piar")) {
-                    boton.remove();
-                }
-            }
-        }
-    });
-}
-
-// Click en botones del menú
-document.addEventListener('click', function (e) {
-    const boton = e.target.closest('.menu-button');
-    if (boton) {
-        const textoLower = boton.textContent.trim().toLowerCase();
-
-        if (textoLower.includes('volver a interfaz')) {
-            window.location.href = 'Interfaz.html';
-        } else if (textoLower.includes('perfil')) {
-            window.location.href = 'perfil.html';
-        } else if (textoLower.includes('estudiantes')) {
-            window.location.href = 'Estudiantes.html';
-        } else if (textoLower.includes('actividades')) {
-            window.location.href = 'Ejercicios.html';
-        } else if (textoLower.includes('registrar un nuevo estudiante')) {
-            window.location.href = 'Registrar_estudiante.html';
-        } else if (textoLower.includes('registrar un piar')) {
-            window.location.href = 'Registrar_PIAR.html';
-        } else if (textoLower.includes('valoraciÃ³n') || textoLower.includes('valoracion') || textoLower.includes('pedagogica')) {
-            window.location.href = 'Valoracion_pedagogica.html';
-        } else if (textoLower.includes('comunicate')) {
-            window.location.href = 'Comunicacion.html';
-        } else if (textoLower.includes('ayuda')) {
-            window.location.href = 'Ayuda.html';
-        } else if (textoLower.includes('cerrar sesion') || textoLower.includes('cerrar sesiÃ³n')) {
-            if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-                localStorage.removeItem('rol');
-                window.location.href = 'Inicio_sesion.html';
-            }
-        }
-
-        if (burger && sideMenu && overlay) {
-            burger.checked = false;
-            sideMenu.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    }
 });
 
 // ========== FUNCIONES PRINCIPALES ==========

@@ -8,98 +8,10 @@
     <link rel="icon" href="img/Ludik2.png" type="image/x-icon">
     <link rel="stylesheet" href="Css\Ayuda.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="Js/auth-guard.js"></script>
 </head>
 
 <body>
-    <!-- Header y Menú Extraíble -->
-    <div class="header">
-        <div class="left-section">
-            <label class="burger" for="burger">
-                <input type="checkbox" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <span class="menu-text">MENÚ</span>
-        </div>
-
-        <div class="centro">
-            <h1 class="titulo-ludik">
-                <img src="img\LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
-            </h1>
-        </div>
-
-        <div class="right-section">
-            <img src="img/Ludik2.png" alt="Logo Ludik" class="header-logo">
-            <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
-            <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
-        </div>
-    </div>
-
-    <!-- Overlay para cerrar menú -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Menú lateral -->
-    <div class="side-menu" id="sideMenu">
-        <div class="menu-header">
-            <div class="menu-title">Panel De Control</div>
-        </div>
-        <div class="menu-buttons">
-            <button class="menu-button">
-                <span class="menu-icon">🏠</span>
-                Volver a Interfaz
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">👤</span>
-                Perfil
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">👥</span>
-                Estudiantes
-            </button>
-            <button class="menu-button" id="btnCrearCuentas">
-                <span class="menu-icon">➕</span>
-                Crear Cuentas
-            </button>
-            <button class="menu-button" id="btnIA">
-                <span class="menu-icon">🤖</span>
-                Asistente IA
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">📚</span>
-                Actividades
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">📝</span>
-                Registrar un nuevo estudiante
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">📋</span>
-                Registrar un PIAR y diagnóstico médico
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">📊</span>
-                Crear una Valoración Pedagógica
-            </button>
-            <button class="menu-button" id="btnDocumentos">
-                <span class="menu-icon">📁</span>
-                Documentos
-            </button>
-            <button class="menu-button">
-                <span class="menu-icon">💬</span>
-                Comunicate
-            </button>
-            <a href="manual.pdf" download class="menu-button">
-                <span class="menu-icon">📘</span>
-                Manual de Usuario
-            </a>
-            <button class="menu-button close-session">
-                <span class="menu-icon">🚪</span>
-                Cerrar Sesión
-            </button>
-        </div>
-    </div>
-
     <!-- Contenido principal -->
     <div class="content">
         <div class="help-section">
@@ -193,7 +105,8 @@
     </footer>
 
     <script src="Js\Ayuda.js"></script>
-    <script src="Js/Roles_menu.js"></script>
+    <script src="Js/menu-loader.js" defer></script>
+    <script src="Js/Interfaz.js" defer></script>
 
 </body>
 

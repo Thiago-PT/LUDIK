@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                    LUDIK - menu.html                         ║
+    ║  Plantilla del header y menú lateral compartido.             ║
+    ║  Este archivo es cargado automáticamente por menu-loader.js  ║
+    ║  en todas las páginas. Para agregar, quitar o editar         ║
+    ║  botones del menú, solo debes hacerlo AQUÍ.                  ║
+    ╚══════════════════════════════════════════════════════════════╝
+-->
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <div class="header">
+        <div class="left-section">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <span class="menu-text">MENÚ</span>
+        </div>
+
+        <div class="centro">
+            <h1 class="titulo-ludik">
+                <img src="img/LUDIK_texto.png" alt="LUDIK" class="imagen-ludik-header">
+            </h1>
+        </div>
+
+        <div class="right-section">
+            <img src="img/Ludik2.png" alt="Logo Ludik" class="header-logo">
+            <img src="img/sistemas.png" alt="Sistemas" class="logo-institucion">
+            <img src="img/logoguanenta.png" alt="Colegio" class="logo-institucion">
+        </div>
+    </div>
+
+    <!-- ===== OVERLAY ===== -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ===== MENÚ LATERAL ===== -->
+    <!--
+        GUÍA RÁPIDA PARA AGREGAR O QUITAR BOTONES:
+        ─────────────────────────────────────────────
+        Para AGREGAR un botón, copia este bloque y pégalo donde quieras:
+
+            <button class="menu-button">
+                <span class="menu-icon">🔔</span>
+                Nombre del botón
+            </button>
+
+        Para QUITAR un botón, borra su bloque <button> completo.
+
+        Para que un botón navegue a una página, agrega el id correspondiente
+        en el archivo Js/Interfaz.js, sección "MANEJO DE CLICKS EN BOTONES DEL MENÚ".
+
+        Para que un botón sea visible solo para ciertos roles, edita la función
+        eliminarBotonesPorRol() en Js/Interfaz.js.
+    -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="menu-title">Panel De Control</div>
+        </div>
+        <butt class="menu-buttons">
+            <button class="menu-button">
+                <span class="menu-icon">👤</span>
+                Perfil
+            </button>
+            <button class="menu-button" id="btnEstudiantes">
+                <span class="menu-icon">👥</span>
+                Estudiantes
+            </button>
+            <button class="menu-button" id="btnCrearCuentas">
+                <span class="menu-icon">➕</span>
+                Crear Cuentas
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">👥</span>
+                Modificar cuentas existentes
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📚</span>
+                Actividades
+            </button>
+            <button class="menu-button" id="btnIA">
+                <span class="menu-icon">🤖</span>
+                Asistente IA
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📝</span>
+                Registrar un nuevo estudiante
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📋</span>
+                Registrar un PIAR y diagnóstico médico
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">📊</span>
+                Valoraciones Pedagógicas
+            </button>
+            <button class="menu-button" id="btnModificarAsignacion">
+                <span class="menu-icon">📝</span>
+                Modificar asignación de los docentes
+            </button>
+            <button class="menu-button" id="btnDocumentos">
+                <span class="menu-icon">📁</span>
+                Documentos
+            </button>
+            <button class="menu-button">
+                <span class="menu-icon">💬</span>
+                Comunicate
+            </button>
+            <a href="manual.pdf" download class="menu-button">
+                <span class="menu-icon">📘</span>
+                Manual de Usuario
+            </a>
+            <button class="menu-button">
+                <span class="menu-icon">❓</span>
+                Ayuda
+            </button>
+            <button class="menu-button close-session">
+                <span class="menu-icon">🚪</span>
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
